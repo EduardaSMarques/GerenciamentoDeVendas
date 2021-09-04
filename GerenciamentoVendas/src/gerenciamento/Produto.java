@@ -2,7 +2,6 @@ package gerenciamento;
 
 public class Produto {
 	
-	private int produtoID;
 	private String nome;
 	private double preco;
 	private String material;
@@ -10,14 +9,6 @@ public class Produto {
 	private String descricao;
 	private String categoria;
 	private byte[] imagem; // verificar depois
-
-	public int getProdutoID() {
-		return produtoID;
-	}
-
-	public void setProdutoID(int produtoID) {
-		this.produtoID = produtoID;
-	}
 
 	public String getNome() {
 		return nome;
