@@ -1,14 +1,13 @@
 package gerenciamento;
 
-public class Produto {
+public abstract class Produto {
 	
-	private String nome;
-	private double preco;
-	private String material;
-	private String modelo;
-	private String descricao;
-	private String categoria;
-	private byte[] imagem; // verificar depois
+	protected String nome;
+	protected double preco;
+	protected String material;
+	protected String modelo;
+	protected String descricao;
+	protected String categoria;
 
 	public String getNome() {
 		return nome;
@@ -56,14 +55,6 @@ public class Produto {
 
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
-	}
-
-	public byte[] getImagem() {
-		return imagem;
-	}
-
-	public void setImagem(byte[] imagem) {
-		this.imagem = imagem;
 	}
 
 }
