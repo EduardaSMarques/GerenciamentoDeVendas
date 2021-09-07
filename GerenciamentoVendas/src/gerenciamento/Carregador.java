@@ -7,6 +7,10 @@ public class Carregador extends Produto {
 	private String potencia;
 	private String tipoDeEntrada;
 	
+	public Carregador() {
+		super();
+	}
+	
 	public Carregador(int id, String nom, double pre, String mat, String c, String pot, String tipEnt, String mod, String des, String cat) {
 		carregadorID = id;
 		nome = nom;

@@ -5,6 +5,10 @@ public class Capa extends Produto {
 	private int capaID;
 	private String cor;
 	private String textura;
+	
+	public Capa() {
+		super();
+	}
 
 	public Capa(int id, String nom, double pre, String mat, String c, String tex, String mod, String des, String cat) {
 		capaID = id;

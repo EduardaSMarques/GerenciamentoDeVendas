@@ -7,7 +7,14 @@ public class Funcionario {
 	private String email;
 	private String endereco;
 	private double salario;
-	private byte[] imagem; //conferir depois
+	
+	public Funcionario(String nom, int tel, String em, String end, double sal) {
+		nome = nom;
+		telefone = tel;
+		email = em;
+		endereco = end;
+		salario = sal;
+	}
 
 	public String getNome() {
 		return nome;
@@ -49,12 +56,4 @@ public class Funcionario {
 		this.salario = salario;
 	}
 
-	public byte[] getImagem() {
-		return imagem;
-	}
-
-	public void setImagem(byte[] imagem) {
-		this.imagem = imagem;
-	}	
-	
 }

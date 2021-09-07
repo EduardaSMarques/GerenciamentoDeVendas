@@ -10,6 +10,15 @@ public class Conta {
 	private double preco;
 	private Date vencimento;
 	private String status;
+	
+	public Conta(String nom, String desc, int parc, double pre, Date venc, String sta) {
+		nome = nom;
+		descricao = desc;
+		parcelas = parc;
+		preco = pre;
+		vencimento = venc;
+		status = sta;
+	}
 
 	public String getNome() {
 		return nome;

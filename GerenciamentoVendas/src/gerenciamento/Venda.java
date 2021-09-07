@@ -9,6 +9,14 @@ public class Venda {
 	private int desconto;
 	private int valorTotal;
 	private Date data;
+	
+	public Venda(String forPaga, int quantP, int des, int vt, Date d) {
+		formaPaga = forPaga;
+		quantProduto = quantP;
+		desconto = des;
+		valorTotal = vt;
+		data = d;
+	}
 
 	public String getFormaPaga() {
 		return formaPaga;

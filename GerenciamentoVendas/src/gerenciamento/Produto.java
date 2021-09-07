@@ -8,6 +8,28 @@ public abstract class Produto {
 	protected String modelo;
 	protected String descricao;
 	protected String categoria;
+	private Estoque[] produtosEstoque = new Estoque[20];
+	private int numProdutos = 0;
+	
+	public Produto() {
+		super();
+	}
+		
+	public Estoque[] getProdutosEstoque() {
+		return produtosEstoque;
+	}
+
+	public void setProdutosEstoque(Estoque[] produtosEstoque) {
+		this.produtosEstoque = produtosEstoque;
+	}
+
+	public int getNumProdutos() {
+		return numProdutos;
+	}
+
+	public void setNumProdutos(int numProdutos) {
+		this.numProdutos = numProdutos;
+	}
 
 	public String getNome() {
 		return nome;

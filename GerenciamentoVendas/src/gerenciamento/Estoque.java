@@ -1,10 +1,16 @@
 package gerenciamento;
 
 public class Estoque {
-
+	
 	private String fornecedor;
 	private int quantidadeFornecida;
 	private double precoDaQuantFornecida;
+	
+	public Estoque(String forn, int qantForn, double preQuantF) {
+		fornecedor = forn;
+		quantidadeFornecida = qantForn;
+		precoDaQuantFornecida = preQuantF;
+	}
 
 	public String getFornecedor() {
 		return fornecedor;

@@ -4,6 +4,10 @@ public class Pelicula extends Produto {
 	
 	private int peliculaID;
 	private String textura;
+	
+	public Pelicula() {
+		super();
+	}
 
 	public Pelicula(int id, String nom, double pre, String mat, String tex, String mod, String des, String cat) {	
 		peliculaID = id;

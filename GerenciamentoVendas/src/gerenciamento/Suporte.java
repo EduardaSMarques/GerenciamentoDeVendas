@@ -7,6 +7,10 @@ public class Suporte extends Produto {
 	private String textura;
 	private String tipoDoSuporte;
 	private String tamanho;
+	
+	public Suporte() {
+		super();
+	}
 
 	public Suporte(int id, String nom, double pre, String mat, String c, String tex, String tipSup, String tam, String mod, String des, String cat) {
 		suporteID = id;

@@ -8,6 +8,16 @@ public class Cliente {
 	private int telefone;
 	private String email;
 	private String genero;
+	
+	public Cliente(int id, String nom, String cpf, int tel, String em, String gen) {
+		clienteID = id;
+		nome = nom;
+		numCPF = cpf;
+		telefone = tel;
+		email = em;
+		genero = gen;
+	}
+
 
 	public int getClienteID() {
 		return clienteID;

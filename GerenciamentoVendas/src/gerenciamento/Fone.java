@@ -7,6 +7,10 @@ public class Fone extends Produto {
 	private String textura;
 	private String tipoDoFone;
 	
+	public Fone() {
+		super();
+	}
+	
 	public Fone(int id, String nom, double pre, String mat, String c, String tex, String tipFon, String mod, String des, String cat) {
 		foneID = id;
 		nome = nom;
