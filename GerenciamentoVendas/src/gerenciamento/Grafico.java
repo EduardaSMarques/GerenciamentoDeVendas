@@ -2,6 +2,8 @@ package gerenciamento;
 
 public class Grafico {
 	
+	private Venda vend;
+	private Conta cont;
 	private double faturamento;
 	private double despesas;
 	private double lucro;
@@ -10,6 +12,22 @@ public class Grafico {
 	private String nomeCategoriaProduto;
 	private String genero;
 	private int vendasPorGenero;
+	
+	public Venda getVend() {
+		return vend;
+	}
+
+	public void setVend(Venda vend) {
+		this.vend = vend;
+	}
+	
+	public Conta getCont() {
+		return cont;
+	}
+
+	public void setCont(Conta cont) {
+		this.cont = cont;
+	}
 
 	public double getFaturamento() {
 		return faturamento;

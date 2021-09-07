@@ -78,5 +78,14 @@ public abstract class Produto {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+	
+	//funcionalidades
+	public void buscaProduto() {
+
+	}
+	
+	public void buscaCategoria() {
+
+	}
 
 }

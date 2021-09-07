@@ -8,6 +8,10 @@ public class Funcionario {
 	private String endereco;
 	private double salario;
 	
+	public Funcionario() {
+			
+	}
+	
 	public Funcionario(String nom, int tel, String em, String end, double sal) {
 		nome = nom;
 		telefone = tel;
@@ -54,6 +58,17 @@ public class Funcionario {
 
 	public void setSalario(double salario) {
 		this.salario = salario;
+	}
+	
+	//funcionalidades
+	public void buscaFuncionario(int i) {
+
+	}
+	
+	public String toString() {
+		return "\nNome do funcionário: " + nome + "\nTelefone: " + telefone
+				+ "\nE-mail: " + email + "\nEndereço: " + endereco 
+				+ "\nSalário: " + salario;
 	}
 
 }

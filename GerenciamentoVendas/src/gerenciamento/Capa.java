@@ -9,7 +9,8 @@ public class Capa extends Produto {
 	public Capa() {
 		super();
 	}
-
+	
+	//Sobrecarga
 	public Capa(int id, String nom, double pre, String mat, String c, String tex, String mod, String des, String cat) {
 		capaID = id;
 		nome = nom;
@@ -19,6 +20,13 @@ public class Capa extends Produto {
 		textura = tex;
 		modelo = mod;
 		descricao = des;
+		categoria = cat;
+	}
+	
+	public Capa(int id, String nom, double pre, String cat) {
+		capaID = id;
+		nome = nom;
+		preco = pre;
 		categoria = cat;
 	}
 	

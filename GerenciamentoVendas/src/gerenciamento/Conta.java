@@ -11,6 +11,10 @@ public class Conta {
 	private Date vencimento;
 	private String status;
 	
+	public Conta() {
+		
+	}
+	
 	public Conta(String nom, String desc, int parc, double pre, Date venc, String sta) {
 		nome = nom;
 		descricao = desc;
@@ -66,6 +70,20 @@ public class Conta {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	//funcionalidades
+	public void contaApagar() {
+
+	}
+	
+	public void contaAreceber() {
+
+	}
+
+	public String toString() {
+		return  "\nNome: "+ nome + "\nDescrição: " + descricao + "\nParcelas: " + parcelas 
+				+ "\nPreço: " + preco + "\nVencimento: " + vencimento + "\nStatus: " + status;
 	}
 
 }
