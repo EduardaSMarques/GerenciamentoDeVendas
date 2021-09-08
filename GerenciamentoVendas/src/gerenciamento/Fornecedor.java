@@ -1,5 +1,7 @@
 package gerenciamento;
 
+import java.util.Scanner;
+
 public class Fornecedor {
 	
 	private Produto produto;
@@ -80,7 +82,14 @@ public class Fornecedor {
 	}
 	
 	//funcionalidades
-	public void buscaFuncionario() {
+	public void buscaFornecedor(String nome) {
+		Scanner ler = new Scanner(System.in);
+		Dado d;
+		d = new Dado();
+		if (d.comparaFornecedor(nome) == true)
+			System.out.println(toString());
+		else if (d.comparaFornecedor(nome) == false)
+			System.out.println("Não foi encontrado!");
 		
 	}
 	
@@ -88,6 +97,6 @@ public class Fornecedor {
 		return  "\nNome do Fornecedor: "+ nome + "\nTelefone: " + telefone 
 				+ "\nEndereço: " + endereco + "\nCNPJ: " + cnpj 
 				+ "\nE-mail: " + email + "\nProduto Fornecido: " + produtoFornecido;
-	}	
-
+	}
+	
 }

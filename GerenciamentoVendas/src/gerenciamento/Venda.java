@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class Venda {
 	
-	private Produto[] pro;
 	private Funcionario funcio;
 	private Cliente client;
 	private Produto produt;
@@ -27,14 +26,6 @@ public class Venda {
 		desconto = des;
 		valorTotal = vt;
 		data = d;
-	}
-	
-	public Produto[] getPro() {
-		return pro;
-	}
-
-	public void setPro(Produto[] pro) {
-		this.pro = pro;
 	}
 	
 	public Funcionario getFuncio() {

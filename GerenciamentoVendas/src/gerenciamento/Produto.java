@@ -14,7 +14,7 @@ public abstract class Produto {
 	public Produto() {
 		super();
 	}
-		
+	
 	public Estoque[] getProdutosEstoque() {
 		return produtosEstoque;
 	}

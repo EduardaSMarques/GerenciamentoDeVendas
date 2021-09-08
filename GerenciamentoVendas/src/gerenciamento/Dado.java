@@ -25,8 +25,7 @@ public class Dado {
 		private int qtdClientes = 0;
 		private Conta[] contas = new Conta[20];
 		private int qtdContas = 0;
-		
-		
+	
 	
 		public void preenchendoComDadosAleatorios() {
 				for(int i = 0; i < 6; i++) {
@@ -46,7 +45,7 @@ public class Dado {
 					estoques[i] = new Estoque(fornecedores[i], (i+1)*20, (i+1)*50);
 					fornecedores[i] = new Fornecedor("fornecedor"+i, (i+1)*100000000, "endereco"+i, "cnpj"+i, "email"+i, "produtoFornecido"+i);
 					funcionarios[i] = new Funcionario("Funcionario"+i, (i+1)*200000000, "email"+i, "endereco"+i, (i+1)*1000);
-					//vendas[i] = new Venda(funcionarios[i], clientes[i],Produto, "formaPaga"+i, (i+1)*10, (i+1)-10, (i+1)*50, d);
+					//vendas[i] = new Venda(funcionarios[i], clientes[i], , "formaPaga"+i, (i+1)*10, (i+1)-10, (i+1)*50, d);
 					clientes[i] = new Cliente((i+1)*331122, "Cliente"+i, "numCPF"+i, (i+1)*300000000, "email"+i, "genero"+i);
 					contas[i] = new Conta("Conta"+i, "descricao"+i, (i+1)*5, (i+1)*50, d, "status"+i);
 								
@@ -236,24 +235,24 @@ public class Dado {
 		}
 
 		//public Venda[] getVendas() {
-			//return vendas;
+		//	return vendas;
 		//}
 
 		//public void setVendas(Venda[] vendas) {
-			//this.vendas = vendas;
+		//	this.vendas = vendas;
 		//}
 
 		//public void inserirEditarVenda(Venda v, int pos) {
-			//this.vendas[pos] = v;
-			//if(pos == qtdVendas) qtdVendas++;
+		//	this.vendas[pos] = v;
+		//	if(pos == qtdVendas) qtdVendas++;
 		//}
 		
 		//public int getQtdVendas() {
-			//return qtdVendas;
+		//	return qtdVendas;
 		//}
 
 		//public void setQtdVendas(int qtdVendas) {
-			//this.qtdVendas = qtdVendas;
+		//	this.qtdVendas = qtdVendas;
 		//}
 
 		public Cliente[] getClientes() {
@@ -296,6 +295,14 @@ public class Dado {
 
 		public void setQtdContas(int qtdContas) {
 			this.qtdContas = qtdContas;
+		}
+		
+		public boolean comparaFornecedor(String nome) {
+			for (Fornecedor noms : fornecedores) {
+				if(nome.equals(noms) == true)
+					return true;
+			}
+			return false;	
 		}
 		
 }
