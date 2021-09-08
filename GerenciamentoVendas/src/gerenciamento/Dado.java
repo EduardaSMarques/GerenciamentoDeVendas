@@ -25,7 +25,7 @@ public class Dado {
 		private int qtdClientes = 0;
 		private Conta[] contas = new Conta[20];
 		private int qtdContas = 0;
-	
+		
 	
 		public void preenchendoComDadosAleatorios() {
 				for(int i = 0; i < 6; i++) {
@@ -45,7 +45,7 @@ public class Dado {
 					estoques[i] = new Estoque(fornecedores[i], (i+1)*20, (i+1)*50);
 					fornecedores[i] = new Fornecedor("fornecedor"+i, (i+1)*100000000, "endereco"+i, "cnpj"+i, "email"+i, "produtoFornecido"+i);
 					funcionarios[i] = new Funcionario("Funcionario"+i, (i+1)*200000000, "email"+i, "endereco"+i, (i+1)*1000);
-					//vendas[i] = new Venda(funcionarios[i], clientes[i], , "formaPaga"+i, (i+1)*10, (i+1)-10, (i+1)*50, d);
+					//vendas[i] = new Venda(funcionarios[i], clientes[i],new ArrayList<>(), "formaPaga"+i, (i+1)*10, (i+1)-10, (i+1)*50, d);
 					clientes[i] = new Cliente((i+1)*331122, "Cliente"+i, "numCPF"+i, (i+1)*300000000, "email"+i, "genero"+i);
 					contas[i] = new Conta("Conta"+i, "descricao"+i, (i+1)*5, (i+1)*50, d, "status"+i);
 								

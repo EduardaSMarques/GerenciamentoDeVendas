@@ -1,6 +1,8 @@
 package gerenciamento;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Venda {
 	
@@ -12,12 +14,15 @@ public class Venda {
 	private int desconto;
 	private int valorTotal;
 	private Date data;
+	//private final List<Produto> produto;
 	
 	public Venda() {
+		//this.produto = new ArrayList<>();
 		
 	}
 	
-	public Venda(Funcionario fun, Cliente cli, Produto prod, String forPaga, int quantP, int des, int vt, Date d) {
+	public Venda(Funcionario fun, Cliente cli,List<Produto> produto, Produto prod, String forPaga, int quantP, int des, int vt, Date d) {
+		//this.produto = new ArrayList<>();
 		funcio = fun;
 		client = cli;
 		produt = prod;
@@ -104,5 +109,9 @@ public class Venda {
 	public void totalCompra() {
 		
 	}
+
+	//public List<Produto> getProduto() {
+		//return produto;
+	//}
 	
 }
