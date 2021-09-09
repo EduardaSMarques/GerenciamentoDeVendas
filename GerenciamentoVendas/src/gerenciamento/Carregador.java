@@ -1,17 +1,15 @@
 package gerenciamento;
 
 public class Carregador extends Produto {
-	
+
 	private int carregadorID;
 	private String cor;
 	private String potencia;
 	private String tipoDeEntrada;
-	
-	public Carregador() {
-		super();
-	}
-	
-	public Carregador(int id, String nom, double pre, String mat, String c, String pot, String tipEnt, String mod, String des, String cat) {
+
+	// Sobrecarga
+	public Carregador(int id, String nom, Double pre, String mat, String c, String pot, String tipEnt, String mod,
+			String des, String cat) {
 		carregadorID = id;
 		nome = nom;
 		preco = pre;
@@ -23,14 +21,20 @@ public class Carregador extends Produto {
 		descricao = des;
 		categoria = cat;
 	}
-	
-	public String toString() {
-		return  "\nID: "+ carregadorID + "\nNome do Carregador: " + nome + "\nPreço: " + preco 
-				+ "\nMaterial: " + material + "\nCor: " + cor + "\nPotencia: " + potencia 
-				+ "\nTipo de Entrada: " + tipoDeEntrada + "\nModelo: " + modelo 
-				+ "\nDescrição: " + descricao + "\nCategoria: " + categoria;
+
+	public Carregador(int id, String nom, Double pre, String cat) {
+		carregadorID = id;
+		nome = nom;
+		preco = pre;
+		categoria = cat;
 	}
-	
+
+	public String toString() {
+		return "\nID: " + carregadorID + "\nNome do Carregador: " + nome + "\nPreço: " + preco + "\nMaterial: "
+				+ material + "\nCor: " + cor + "\nPotencia: " + potencia + "\nTipo de Entrada: " + tipoDeEntrada
+				+ "\nModelo: " + modelo + "\nDescrição: " + descricao + "\nCategoria: " + categoria;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -39,11 +43,11 @@ public class Carregador extends Produto {
 		this.nome = nome;
 	}
 
-	public double getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
 
-	public void setPreco(double preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 
@@ -54,7 +58,7 @@ public class Carregador extends Produto {
 	public void setMaterial(String material) {
 		this.material = material;
 	}
-		
+
 	public String getModelo() {
 		return modelo;
 	}
@@ -78,7 +82,7 @@ public class Carregador extends Produto {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	
+
 	public int getCarregadorID() {
 		return carregadorID;
 	}
@@ -86,7 +90,7 @@ public class Carregador extends Produto {
 	public void setCarregadorID(int carregadorID) {
 		this.carregadorID = carregadorID;
 	}
-	
+
 	public String getCor() {
 		return cor;
 	}

@@ -5,13 +5,9 @@ public class Capa extends Produto {
 	private int capaID;
 	private String cor;
 	private String textura;
-	
-	public Capa() {
-		super();
-	}
-	
-	//Sobrecarga
-	public Capa(int id, String nom, double pre, String mat, String c, String tex, String mod, String des, String cat) {
+
+	// Sobrecarga
+	public Capa(int id, String nom, Double pre, String mat, String c, String tex, String mod, String des, String cat) {
 		capaID = id;
 		nome = nom;
 		preco = pre;
@@ -22,20 +18,20 @@ public class Capa extends Produto {
 		descricao = des;
 		categoria = cat;
 	}
-	
-	public Capa(int id, String nom, double pre, String cat) {
+
+	public Capa(int id, String nom, Double pre, String cat) {
 		capaID = id;
 		nome = nom;
 		preco = pre;
 		categoria = cat;
 	}
-	
+
 	public String toString() {
-		return  "\nID: "+ capaID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
-				+ "\nMaterial: " + material + "\nCor: " + cor + "\nTextura: " + textura + "\nModelo: " + modelo 
-				+ "\nDescrição: " + descricao + "\nCategoria: " + categoria;
+		return "\nID: " + capaID + "\nNome da Capa: " + nome + "\nPreço: " + preco + "\nMaterial: " + material
+				+ "\nCor: " + cor + "\nTextura: " + textura + "\nModelo: " + modelo + "\nDescrição: " + descricao
+				+ "\nCategoria: " + categoria;
 	}
-		
+
 	public String getNome() {
 		return nome;
 	}
@@ -44,11 +40,11 @@ public class Capa extends Produto {
 		this.nome = nome;
 	}
 
-	public double getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
 
-	public void setPreco(double preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 
@@ -59,7 +55,7 @@ public class Capa extends Produto {
 	public void setMaterial(String material) {
 		this.material = material;
 	}
-		
+
 	public String getModelo() {
 		return modelo;
 	}
@@ -83,7 +79,7 @@ public class Capa extends Produto {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	
+
 	public int getCapaID() {
 		return capaID;
 	}
@@ -91,7 +87,7 @@ public class Capa extends Produto {
 	public void setCapaID(int capaID) {
 		this.capaID = capaID;
 	}
-	
+
 	public String getCor() {
 		return cor;
 	}
@@ -107,5 +103,5 @@ public class Capa extends Produto {
 	public void setTextura(String textura) {
 		this.textura = textura;
 	}
-	
+
 }

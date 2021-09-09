@@ -13,6 +13,12 @@ public class Cliente {
 		
 	}
 	
+	public String toString() {
+		return  "\n============ CLIENTES ============"
+				+ "\nID: "+ clienteID + "\nNome do Cliente: " + nome + "\nCPF: " + numCPF 
+				+ "\nTelefone: " + telefone + "\nE-mail: " + email + "\nGenero: " + genero;
+	}	
+	
 	public Cliente(int id, String nom, String cpf, int tel, String em, String gen) {
 		clienteID = id;
 		nome = nom;
@@ -69,16 +75,6 @@ public class Cliente {
 
 	public void setGenero(String genero) {
 		this.genero = genero;
-	}
-	
-	//funcionalidades
-	public void buscaCliente(int i) {
-
-	}
-	
-	public String toString() {
-		return  "\nID: "+ clienteID + "\nNome do Cliente: " + nome + "\nCPF: " + numCPF 
-				+ "\nTelefone: " + telefone + "\nE-mail: " + email + "\nGenero: " + genero;
-	}		
+	}	
 	
 }

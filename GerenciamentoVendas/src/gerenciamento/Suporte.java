@@ -7,12 +7,9 @@ public class Suporte extends Produto {
 	private String textura;
 	private String tipoDoSuporte;
 	private String tamanho;
-	
-	public Suporte() {
-		super();
-	}
 
-	public Suporte(int id, String nom, double pre, String mat, String c, String tex, String tipSup, String tam, String mod, String des, String cat) {
+	// Sobrecarga
+	public Suporte(int id, String nom, Double pre, String mat, String c, String tex, String tipSup, String tam, String mod, String des, String cat) {
 		suporteID = id;
 		nome = nom;
 		preco = pre;
@@ -23,6 +20,13 @@ public class Suporte extends Produto {
 		tamanho = tam;
 		modelo = mod;
 		descricao = des;
+		categoria = cat;
+	}
+	
+	public Suporte(int id, String nom, Double pre, String cat) {
+		suporteID = id;
+		nome = nom;
+		preco = pre;
 		categoria = cat;
 	}
 	
@@ -41,11 +45,11 @@ public class Suporte extends Produto {
 		this.nome = nome;
 	}
 
-	public double getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
 
-	public void setPreco(double preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 

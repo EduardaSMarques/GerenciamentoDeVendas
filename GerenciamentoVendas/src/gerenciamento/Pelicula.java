@@ -4,12 +4,9 @@ public class Pelicula extends Produto {
 	
 	private int peliculaID;
 	private String textura;
-	
-	public Pelicula() {
-		super();
-	}
 
-	public Pelicula(int id, String nom, double pre, String mat, String tex, String mod, String des, String cat) {	
+	// Sobrecarga
+	public Pelicula(int id, String nom, Double pre, String mat, String tex, String mod, String des, String cat) {	
 		peliculaID = id;
 		nome = nom;
 		preco = pre;
@@ -17,6 +14,13 @@ public class Pelicula extends Produto {
 		textura = tex;
 		modelo = mod;
 		descricao = des;
+		categoria = cat;
+	}
+	
+	public Pelicula(int id, String nom, Double pre, String cat) {
+		peliculaID = id;
+		nome = nom;
+		preco = pre;
 		categoria = cat;
 	}
 	
@@ -34,11 +38,11 @@ public class Pelicula extends Produto {
 		this.nome = nome;
 	}
 
-	public double getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
 
-	public void setPreco(double preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 

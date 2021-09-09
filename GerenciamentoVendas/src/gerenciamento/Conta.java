@@ -9,6 +9,9 @@ public class Conta {
 	private int parcelas;
 	private double preco;
 	private Date vencimento;
+	private String dia;
+	private String mes;
+	private String ano;
 	private String status;
 	
 	public Conta() {
@@ -23,6 +26,12 @@ public class Conta {
 		vencimento = venc;
 		status = sta;
 	}
+	
+	public String toString() {
+		return  "\n============ CONTAS A PAGAR ============"
+				+ "\nNome: "+ nome + "\nDescrição: " + descricao + "\nParcelas: " + parcelas 
+				+ "\nPreço: " + preco + "\nVencimento: " + vencimento + "\nStatus: " + status;
+	}
 
 	public String getNome() {
 		return nome;
@@ -31,7 +40,7 @@ public class Conta {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+	
 	public String getDescricao() {
 		return descricao;
 	}
@@ -72,18 +81,8 @@ public class Conta {
 		this.status = status;
 	}
 	
-	//funcionalidades
-	public void contaApagar() {
-
-	}
-	
-	public void contaAreceber() {
-
-	}
-
-	public String toString() {
-		return  "\nNome: "+ nome + "\nDescrição: " + descricao + "\nParcelas: " + parcelas 
-				+ "\nPreço: " + preco + "\nVencimento: " + vencimento + "\nStatus: " + status;
+	public String dataVencimento(String dd, String MM, String yyyy) {
+		return  dia + "/" + mes + "/" + ano; 
 	}
 
 }

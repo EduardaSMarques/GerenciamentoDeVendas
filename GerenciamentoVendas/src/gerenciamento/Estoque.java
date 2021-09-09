@@ -2,12 +2,22 @@ package gerenciamento;
 
 public class Estoque {
 	
-	private Fornecedor fornec;
+	public static Fornecedor fornec;
 	private int quantidadeFornecida;
 	private double precoDaQuantFornecida;
+	static String nomeForn = fornec.getNome();
+	static String nomeProd = fornec.getProdutoFornecido();
 	
-	public Estoque() {
-		
+	public Estoque(String nom, String nomprod, int qantForn, double preQuantF) {
+		nomeForn = nom;
+		nomeProd = nomprod;
+		quantidadeFornecida = qantForn;
+		precoDaQuantFornecida = preQuantF;
+	}
+
+	public String toString() {
+		return  "\nFornecedor: "+ nomeForn + "\nProduto:" + nomeProd +"\nQuantidade Fornecida: " + quantidadeFornecida 
+				+ "\nPreço da quantidade fornecida: " + precoDaQuantFornecida;
 	}
 	
 	public Estoque(Fornecedor forn, int qantForn, double preQuantF) {
@@ -21,7 +31,7 @@ public class Estoque {
 	}
 
 	public void setFornec(Fornecedor fornecedor) {
-		this.fornec = fornecedor;
+		Estoque.fornec = fornecedor;
 	}
 	
 	public int getQuantidadeFornecida() {
@@ -39,15 +49,5 @@ public class Estoque {
 	public void setPrecoDaQuantFornecida(double precoDaQuantFornecida) {
 		this.precoDaQuantFornecida = precoDaQuantFornecida;
 	}
-	
-	//funcionalidades
-	public void buscaProduto() {
-
-	}
-		
-	public String toString() {
-		return  "\nFornecedor: "+ fornec + "\nQuantidade Fornecida: " + quantidadeFornecida 
-				+ "\nPreço da quantidade fornecida: " + precoDaQuantFornecida;
-	}	
 
 }

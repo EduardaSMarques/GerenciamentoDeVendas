@@ -7,11 +7,8 @@ public class Fone extends Produto {
 	private String textura;
 	private String tipoDoFone;
 	
-	public Fone() {
-		super();
-	}
-	
-	public Fone(int id, String nom, double pre, String mat, String c, String tex, String tipFon, String mod, String des, String cat) {
+	// Sobrecarga
+	public Fone(int id, String nom, Double pre, String mat, String c, String tex, String tipFon, String mod, String des, String cat) {
 		foneID = id;
 		nome = nom;
 		preco = pre;
@@ -21,6 +18,13 @@ public class Fone extends Produto {
 		tipoDoFone = tipFon;
 		modelo = mod;
 		descricao = des;
+		categoria = cat;
+	}
+
+	public Fone(int id, String nom, Double pre, String cat) {
+		foneID = id;
+		nome = nom;
+		preco = pre;
 		categoria = cat;
 	}
 	
@@ -39,11 +43,11 @@ public class Fone extends Produto {
 		this.nome = nome;
 	}
 
-	public double getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
 
-	public void setPreco(double preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 

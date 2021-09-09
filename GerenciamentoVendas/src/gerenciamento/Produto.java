@@ -3,17 +3,14 @@ package gerenciamento;
 public abstract class Produto {
 	
 	protected String nome;
-	protected double preco;
+	protected Double preco;
 	protected String material;
 	protected String modelo;
 	protected String descricao;
 	protected String categoria;
+	private Fornecedor fornecedor;
 	private Estoque[] produtosEstoque = new Estoque[20];
 	private int numProdutos = 0;
-	
-	public Produto() {
-		super();
-	}
 	
 	public Estoque[] getProdutosEstoque() {
 		return produtosEstoque;
@@ -21,7 +18,7 @@ public abstract class Produto {
 
 	public void setProdutosEstoque(Estoque[] produtosEstoque) {
 		this.produtosEstoque = produtosEstoque;
-	}
+	}	
 
 	public int getNumProdutos() {
 		return numProdutos;
@@ -34,16 +31,16 @@ public abstract class Produto {
 	public String getNome() {
 		return nome;
 	}
-
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	public double getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
 
-	public void setPreco(double preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 
@@ -78,14 +75,22 @@ public abstract class Produto {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	
-	//funcionalidades
-	public void buscaProduto() {
 
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
 	}
 	
-	public void buscaCategoria() {
-
+	public String mostraEstoque() {
+		String mostra = "============== ESTOQUE ============== \n" ;
+		for(int i = 0; i < numProdutos; i++) {
+			System.out.println(i);
+			mostra = mostra + "\n"+ produtosEstoque[i].toString();
+		}
+		return mostra;
 	}
 
 }

@@ -1,5 +1,6 @@
 package gerenciamento;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -14,15 +15,16 @@ public class Venda {
 	private int desconto;
 	private int valorTotal;
 	private Date data;
-	//private final List<Produto> produto;
+	private List<Produto> produtos;
+	static Double soma = (double) 0;
+	// static int numAddcarrinho = 0;
+	// static String nomesAddnoCarrinho[] = null;
 	
 	public Venda() {
-		//this.produto = new ArrayList<>();
-		
+		produtos = new ArrayList<Produto>();
 	}
 	
 	public Venda(Funcionario fun, Cliente cli,List<Produto> produto, Produto prod, String forPaga, int quantP, int des, int vt, Date d) {
-		//this.produto = new ArrayList<>();
 		funcio = fun;
 		client = cli;
 		produt = prod;
@@ -97,21 +99,36 @@ public class Venda {
 		this.data = data;
 	}
 	
-	//funcionalidades
-	public void buscaProdutoID(int i) {
-		
+	// public String toString() {
+	// return "\nNome: "+ nomesAddnoCarrinho;
+	// }
+	
+	// public static String carrinhoCompra(String nome) {
+	// String mostra = "***** Lista de produtos add no carrinho ***** \n";
+	// for(int i = 0; i < numAddcarrinho; i++) {
+	// System.out.println(i);
+	// mostra = mostra + "\n"+ nomesAddnoCarrinho[i].toString();
+	// }
+	// return mostra;
+	// }
+	
+	public static String somaDosPrecos(Double preco) {
+		soma = soma + preco;
+		DecimalFormat df = new DecimalFormat("#.00");
+		return df.format(soma);
 	}
 	
-	public void addItem(int i) {
-		
+	public String mostrarProdutos() {
+		return "=============== PRODUTOS ===============\n"
+				+ getProdutos();
 	}	
-	
-	public void totalCompra() {
-		
+
+	public List<Produto> getProdutos() {
+		return produtos;
 	}
 
-	//public List<Produto> getProduto() {
-		//return produto;
-	//}
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
+	}
 	
 }
