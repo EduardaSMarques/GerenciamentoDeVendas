@@ -9,16 +9,6 @@ public class Fornecedor {
 	private String email;
 	private String produtoFornecido;
 	
-	public Fornecedor() {
-		
-	}
-	
-	public String toString() {
-		return  "\nNome do Fornecedor: "+ nome + "\nTelefone: " + telefone 
-				+ "\nEndereço: " + endereco + "\nCNPJ: " + cnpj 
-				+ "\nE-mail: " + email + "\nProduto Fornecido: " + produtoFornecido;
-	}
-	
 	public Fornecedor(String nom, int tel, String end, String c, String em, String prodForn) {
 		nome = nom;
 		telefone = tel;
@@ -26,6 +16,12 @@ public class Fornecedor {
 		cnpj = c;
 		email = em;
 		produtoFornecido = prodForn;
+	}
+	
+	public String toString() {
+		return  "\nNome do Fornecedor: "+ nome + "\nTelefone: " + telefone 
+				+ "\nEndereço: " + endereco + "\nCNPJ: " + cnpj 
+				+ "\nE-mail: " + email + "\nProduto Fornecido: " + produtoFornecido;
 	}
 	
 	public String getNome() {

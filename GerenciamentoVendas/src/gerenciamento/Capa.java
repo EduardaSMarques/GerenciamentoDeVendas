@@ -25,12 +25,6 @@ public class Capa extends Produto {
 		preco = pre;
 		categoria = cat;
 	}
-
-	public String toString() {
-		return "\nID: " + capaID + "\nNome da Capa: " + nome + "\nPreço: " + preco + "\nMaterial: " + material
-				+ "\nCor: " + cor + "\nTextura: " + textura + "\nModelo: " + modelo + "\nDescrição: " + descricao
-				+ "\nCategoria: " + categoria;
-	}
 	
 	public String toStringReduzido() {
 		return "\nID: " + capaID + "\nNome da Capa: " + nome + "\nPreço: " + preco 

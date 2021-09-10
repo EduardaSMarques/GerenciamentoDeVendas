@@ -28,12 +28,6 @@ public class Carregador extends Produto {
 		preco = pre;
 		categoria = cat;
 	}
-
-	public String toString() {
-		return "\nID: " + carregadorID + "\nNome do Carregador: " + nome + "\nPreço: " + preco + "\nMaterial: "
-				+ material + "\nCor: " + cor + "\nPotencia: " + potencia + "\nTipo de Entrada: " + tipoDeEntrada
-				+ "\nModelo: " + modelo + "\nDescrição: " + descricao + "\nCategoria: " + categoria;
-	}
 	
 	public String toStringReduzido() {
 		return "\nID: " + carregadorID + "\nNome da Capa: " + nome + "\nPreço: " + preco 

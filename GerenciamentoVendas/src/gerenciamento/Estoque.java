@@ -1,31 +1,24 @@
 package gerenciamento;
 
 public class Estoque {
-	
-	public static Fornecedor fornec;
+
+	private String nomeProd;
 	private int quantidadeFornecida;
 	private double precoDaQuantFornecida;
 	private Produto[] produtosEstoque = new Produto[20];
 	private int numProdutos = 0;
-	static String nomeForn = fornec.getNome();
-	static String nomeProd = fornec.getProdutoFornecido();
 	
-	public Estoque(String nom, String nomprod, int qantForn, double preQuantF) {
-		nomeForn = nom;
-		nomeProd = nomprod;
-		quantidadeFornecida = qantForn;
-		precoDaQuantFornecida = preQuantF;
-	}
 
-	public Estoque(Fornecedor forn, int qantForn, double preQuantF) {
-		fornec = forn;
+	public Estoque(String nom, int qantForn, double preQuantF) {
+		nomeProd = nom;
 		quantidadeFornecida = qantForn;
 		precoDaQuantFornecida = preQuantF;
 	}
 	
 	public String toString() {
-		return  "\nFornecedor: "+ nomeForn + "\nProduto:" + nomeProd +"\nQuantidade Fornecida: " + quantidadeFornecida 
-				+ "\nPreço da quantidade fornecida: " + precoDaQuantFornecida;
+		return  "\nNome do Produto: " + nomeProd 
+				+ "\nQuantidade Fornecida: " + quantidadeFornecida 
+				+ "\nPreço da quantidade fornecida: R$ " + precoDaQuantFornecida;
 	}
 	
 	public Produto[] getProdutosEstoque() {
@@ -35,13 +28,17 @@ public class Estoque {
 	public void setProdutosEstoque(Produto[] produtosEstoque) {
 		this.produtosEstoque = produtosEstoque;
 	}
-
-	public Fornecedor getFornec() {
-		return fornec;
+	
+	public void incluirProdutosEstoque(Produto p, int posicao) {
+		this.produtosEstoque[posicao] = p;
+	}
+	
+	public String getNomeProd() {
+		return nomeProd;
 	}
 
-	public void setFornec(Fornecedor fornecedor) {
-		Estoque.fornec = fornecedor;
+	public void setNomeProd(String nomeProd) {
+		this.nomeProd = nomeProd;
 	}
 	
 	public int getQuantidadeFornecida() {

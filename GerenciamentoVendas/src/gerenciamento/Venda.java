@@ -8,6 +8,7 @@ import java.util.List;
 public class Venda {
 	
 	private Funcionario funcio;
+	private Estoque estoq;
 	private Cliente client;
 	private Produto produt;
 	private String formaPaga;
@@ -15,14 +16,9 @@ public class Venda {
 	private Double desconto;
 	private int valorTotal;
 	private Date data;
-	private List<Produto> produtos;
 	static Double soma = (double) 0;
 	
-	public Venda() {
-		setProdutos(new ArrayList<Produto>());
-	}
-	
-	public Venda(Funcionario fun, Cliente cli,List<Produto> produto, Produto prod, String forPaga, int quantP, Double des, int vt, Date d) {
+	public Venda(Funcionario fun, Cliente cli, Produto prod, String forPaga, int quantP, Double des, int vt, Date d) {
 		funcio = fun;
 		client = cli;
 		produt = prod;
@@ -41,6 +37,14 @@ public class Venda {
 		this.funcio = funcio;
 	}
 
+	public Estoque getEstoq() {
+		return estoq;
+	}
+
+	public void setEstoq(Estoque estoq) {
+		this.estoq = estoq;
+	}
+	
 	public Cliente getClient() {
 		return client;
 	}
@@ -95,14 +99,6 @@ public class Venda {
 
 	public void setData(Date data) {
 		this.data = data;
-	}
-	
-	public List<Produto> getProdutos() {
-		return produtos;
-	}
-
-	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
 	}
 	
 	public static String somaDosPrecos(Double preco) {

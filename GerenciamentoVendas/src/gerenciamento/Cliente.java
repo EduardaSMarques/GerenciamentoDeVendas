@@ -9,10 +9,6 @@ public class Cliente {
 	private String email;
 	private String genero;
 	
-	public Cliente() {
-		
-	}
-	
 	public String toString() {
 		return  "\nID: "+ clienteID + "\nNome do Cliente: " + nome + "\nCPF: " + numCPF 
 				+ "\nTelefone: " + telefone + "\nE-mail: " + email + "\nGenero: " + genero;

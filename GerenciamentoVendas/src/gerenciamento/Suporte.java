@@ -30,13 +30,6 @@ public class Suporte extends Produto {
 		categoria = cat;
 	}
 	
-	public String toString() {
-		return  "\nID: "+ suporteID + "\nNome do Suporte: " + nome + "\nPreço: " + preco 
-				+ "\nMaterial: " + material + "\nCor: " + cor + "\nTextura: " + textura 
-				+ "\nTipo do Suporte: " + tipoDoSuporte + "\nTamanho: " + tamanho + "\nModelo: " + modelo 
-				+ "\nDescrição: " + descricao + "\nCategoria: " + categoria;
-	}
-	
 	public String toStringReduzido() {
 		return "\nID: " + suporteID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
 				+ "\nCategoria: " + categoria;

@@ -24,12 +24,6 @@ public class Pelicula extends Produto {
 		categoria = cat;
 	}
 	
-	public String toString() {
-		return  "\nID: "+ peliculaID + "\nNome da Película: " + nome + "\nPreço: " + preco 
-				+ "\nMaterial: " + material + "\nTextura: " + textura + "\nModelo: " + modelo 
-				+ "\nDescrição: " + descricao + "\nCategoria: " + categoria;
-	}
-	
 	public String toStringReduzido() {
 		return "\nID: " + peliculaID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
 				+ "\nCategoria: " + categoria;

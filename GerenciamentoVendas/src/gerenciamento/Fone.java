@@ -28,13 +28,6 @@ public class Fone extends Produto {
 		categoria = cat;
 	}
 	
-	public String toString() {
-		return  "\nID: "+ foneID + "\nNome do Fone: " + nome + "\nPreço: " + preco 
-				+ "\nMaterial: " + material + "\nCor: " + cor + "\nTextura: " + textura 
-				+ "\nTipo do Fone: " + tipoDoFone + "\nModelo: " + modelo 
-				+ "\nDescrição: " + descricao + "\nCategoria: " + categoria;
-	}
-	
 	public String toStringReduzido() {
 		return "\nID: " + foneID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
 				+ "\nCategoria: " + categoria;

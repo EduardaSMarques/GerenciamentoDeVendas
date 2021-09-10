@@ -15,30 +15,43 @@ public class Test {
 	static Cliente cli2;
 	static Conta con1;
 	static Conta con2;
-	static Estoque e;
+	static Estoque e1;
 	static Fornecedor forn1;
 	static Fornecedor forn2;
 	static Funcionario fun1;
 	static Funcionario fun2;
-	static Grafico g;
 	static Produto pr;
 	static Venda v;
 
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
-
+		Estoque e1 = new Estoque("Capas", 15, 30.70);
+		Estoque e2 = new Estoque("Carregadores", 20, 20.98);
+		Estoque e3 = new Estoque("Películas", 14, 50.90);
+		Estoque e4 = new Estoque("Fones", 3, 26.98);
+		Estoque e5 = new Estoque("Suportes", 8, 80.40);
+		Estoque e6 = new Estoque("Limpadores de tela", 1, 10.99);
+		Estoque e7 = new Estoque("Capas personalizadas", 4, 67.50);
+		
 		// cadastro de capa
 		c = new Capa(10000, "capa1", 5.99, "Capas");
+		e1.incluirProdutosEstoque(c, 0); //incluindo no array de produtos
 		// cadastro de carregador
 		crr = new Carregador(01000, "Carregador1", 7.68, "Carregadores");
+		e2.incluirProdutosEstoque(crr, 1);
 		// cadastro de suportes
 		s1 = new Suporte(00100, "Suporte1", 40.13, "Suporte");
+		e3.incluirProdutosEstoque(s1, 2);
 		s2 = new Suporte(00110, "suporte2", 38.90, "Suporte");
+		e4.incluirProdutosEstoque(s2, 3);
 		// cadastro de pelicula
 		p = new Pelicula(00010, "Película1", 50.30, "Película");
+		e5.incluirProdutosEstoque(p, 4);
 		// cadastro de fones
 		f1 = new Fone(00001, "fone1", 90.8, "Fones");
+		e6.incluirProdutosEstoque(f1, 5);
 		f2 = new Fone(00011, "fone2", 899.8, "Fones");
+		e7.incluirProdutosEstoque(f2, 6);
 
 		// pegando os preços dos produtos e somando eles
 		Double precoProdCapa = c.getPreco();
@@ -75,9 +88,9 @@ public class Test {
 		System.out.println(f2.toStringReduzido());
 		System.out.println("-----------------------------------------");
 		System.out.print("+++++++++++++++++++++++++++++++++++++++++");
-		System.out.print("\nValor: R$ " + preço + "\nDesconto: R$ 25.50" +
+		System.out.print("\n\nValor: R$ " + preço + "\nDesconto: R$ 25.50" +
 				"\nPreço total da compra: R$ " + Venda.valorTotalComDesconto(25.50) + "\n");
-		System.out.print("+++++++++++++++++++++++++++++++++++++++++");
+		System.out.print("\n+++++++++++++++++++++++++++++++++++++++++");
 		
 		// cadastro de cliente
 		cli1 = new Cliente(2783, "cliente1", "7636333", 986662, "clente1@email.com", "feminino");
@@ -110,7 +123,22 @@ public class Test {
 		System.out.println(fun1.toString());
 		System.out.println("--------------------------------------");
 		System.out.print(fun2.toString());
-		
+		System.out.println("\n\n============== ESTOQUE ===============");
+		System.out.println(e1.toString());
+		System.out.println("\n\n--------------------------------------");
+		System.out.print(e2.toString());
+		System.out.println("\n\n--------------------------------------");
+		System.out.print(e3.toString());
+		System.out.println("\n\n--------------------------------------");
+		System.out.print(e4.toString());
+		System.out.println("\n\n--------------------------------------");
+		System.out.print(e5.toString());
+		System.out.println("\n\n--------------------------------------");
+		System.out.print(e6.toString());
+		System.out.println("\n\n--------------------------------------");
+		System.out.print(e7.toString());
+		System.out.println("\n\n--------------------------------------");
+
 	}
 
 }
