@@ -10,7 +10,6 @@ public class Venda {
 	private Funcionario funcio;
 	private Estoque estoq;
 	private Cliente client;
-	private Produto produt;
 	private String formaPaga;
 	private int quantProduto;
 	private Double desconto;
@@ -18,10 +17,9 @@ public class Venda {
 	private Date data;
 	static Double soma = (double) 0;
 	
-	public Venda(Funcionario fun, Cliente cli, Produto prod, String forPaga, int quantP, Double des, int vt, Date d) {
+	public Venda(Funcionario fun, Cliente cli, String forPaga, int quantP, Double des, int vt, Date d) {
 		funcio = fun;
 		client = cli;
-		produt = prod;
 		formaPaga = forPaga;
 		quantProduto = quantP;
 		desconto = des;
@@ -51,14 +49,6 @@ public class Venda {
 
 	public void setClient(Cliente client) {
 		this.client = client;
-	}
-	
-	public Produto getProdut() {
-		return produt;
-	}
-
-	public void setProdut(Produto produt) {
-		this.produt = produt;
 	}
 	
 	public String getFormaPaga() {
