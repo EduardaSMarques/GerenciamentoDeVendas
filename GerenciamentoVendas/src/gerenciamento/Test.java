@@ -15,6 +15,8 @@ public class Test {
 	static Cliente cli2;
 	static Conta con1;
 	static Conta con2;
+	static Conta con3;
+	static Conta con4;
 	static Estoque e1;
 	static Fornecedor forn1;
 	static Fornecedor forn2;
@@ -95,9 +97,11 @@ public class Test {
 		// cadastro de cliente
 		cli1 = new Cliente(2783, "cliente1", "7636333", 986662, "clente1@email.com", "feminino");
 		cli2 = new Cliente(2103, "cliente2", "7600033", 900609, "clente2@email.com", "masculino");
-		// cadastro de conta
-		con1 = new Conta("conta1", "lotes de produtos", 3, 400.50, "13", "4", "2021", "pago");
+		// cadastro de contas a receber e a pagar
+		con1 = new Conta("conta1", "pagamento de produtos", 3, 400.50, "13", "4", "2021", "pago");
 		con2 = new Conta("conta2", "pagamento de funcionários", 3, 2501.86, "2", "9", "2021", "ainda não foi pago");
+		con3 = new Conta("cliente1", "pagamento de 3 produtos comprados", 12, 300.99, "19", "12", "2021", "ainda não pagou");
+		con4 = new Conta("cliente3", "pagamento de 2 produtos comprados", 5, 54.87, "13", "11", "2021", "ainda não pagou");
 		// cadastro de fornecedor
 		forn1 = new Fornecedor("fornecedor1", 987772, "q2-23", "6762", "fornecedor1@email.com", "Capas");
 		forn2 = new Fornecedor("fornecedor2", 982272, "q2-23", "6762", "fornecedor2@email.com", "Carregadores");
@@ -115,6 +119,11 @@ public class Test {
 		System.out.println(con1.toString());
 		System.out.println("----------------------------------------");
 		System.out.print(con2.toString());
+		System.out.println("\n\n============ CONTAS A RECEBER ============");
+		System.out.println("----------------------------------------");
+		System.out.println(con3.toString());
+		System.out.println("----------------------------------------");
+		System.out.print(con4.toString());
 		System.out.println("\n\n============ FORNECEDORES ============");
 		System.out.println(forn1.toString());
 		System.out.println("--------------------------------------");
@@ -124,7 +133,7 @@ public class Test {
 		System.out.println("--------------------------------------");
 		System.out.print(fun2.toString());
 		System.out.println("\n\n============== ESTOQUE ===============");
-		System.out.println(e1.toString());
+		System.out.print(e1.toString());
 		System.out.println("\n\n--------------------------------------");
 		System.out.print(e2.toString());
 		System.out.println("\n\n--------------------------------------");
