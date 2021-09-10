@@ -12,19 +12,17 @@ public class Venda {
 	private Produto produt;
 	private String formaPaga;
 	private int quantProduto;
-	private int desconto;
+	private Double desconto;
 	private int valorTotal;
 	private Date data;
 	private List<Produto> produtos;
 	static Double soma = (double) 0;
-	// static int numAddcarrinho = 0;
-	// static String nomesAddnoCarrinho[] = null;
 	
 	public Venda() {
-		produtos = new ArrayList<Produto>();
+		setProdutos(new ArrayList<Produto>());
 	}
 	
-	public Venda(Funcionario fun, Cliente cli,List<Produto> produto, Produto prod, String forPaga, int quantP, int des, int vt, Date d) {
+	public Venda(Funcionario fun, Cliente cli,List<Produto> produto, Produto prod, String forPaga, int quantP, Double des, int vt, Date d) {
 		funcio = fun;
 		client = cli;
 		produt = prod;
@@ -75,11 +73,11 @@ public class Venda {
 		this.quantProduto = quantProduto;
 	}
 
-	public int getDesconto() {
+	public Double getDesconto() {
 		return desconto;
 	}
 
-	public void setDesconto(int desconto) {
+	public void setDesconto(Double desconto) {
 		this.desconto = desconto;
 	}
 
@@ -99,30 +97,6 @@ public class Venda {
 		this.data = data;
 	}
 	
-	// public String toString() {
-	// return "\nNome: "+ nomesAddnoCarrinho;
-	// }
-	
-	// public static String carrinhoCompra(String nome) {
-	// String mostra = "***** Lista de produtos add no carrinho ***** \n";
-	// for(int i = 0; i < numAddcarrinho; i++) {
-	// System.out.println(i);
-	// mostra = mostra + "\n"+ nomesAddnoCarrinho[i].toString();
-	// }
-	// return mostra;
-	// }
-	
-	public static String somaDosPrecos(Double preco) {
-		soma = soma + preco;
-		DecimalFormat df = new DecimalFormat("#.00");
-		return df.format(soma);
-	}
-	
-	public String mostrarProdutos() {
-		return "=============== PRODUTOS ===============\n"
-				+ getProdutos();
-	}	
-
 	public List<Produto> getProdutos() {
 		return produtos;
 	}
@@ -130,5 +104,17 @@ public class Venda {
 	public void setProdutos(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
+	
+	public static String somaDosPrecos(Double preco) {
+		soma = soma + preco;
+		DecimalFormat df = new DecimalFormat("#.00");
+		return df.format(soma);
+	}
+	
+	public static String valorTotalComDesconto(Double valorDescont) {
+		soma = soma - valorDescont;
+		DecimalFormat df = new DecimalFormat("#.00");
+		return df.format(soma);
+	}	
 	
 }

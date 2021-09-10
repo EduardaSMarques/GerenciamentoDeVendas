@@ -37,6 +37,11 @@ public class Suporte extends Produto {
 				+ "\nDescrição: " + descricao + "\nCategoria: " + categoria;
 	}
 	
+	public String toStringReduzido() {
+		return "\nID: " + suporteID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
+				+ "\nCategoria: " + categoria;
+	}
+	
 	public String getNome() {
 		return nome;
 	}

@@ -34,6 +34,11 @@ public class Carregador extends Produto {
 				+ material + "\nCor: " + cor + "\nPotencia: " + potencia + "\nTipo de Entrada: " + tipoDeEntrada
 				+ "\nModelo: " + modelo + "\nDescrição: " + descricao + "\nCategoria: " + categoria;
 	}
+	
+	public String toStringReduzido() {
+		return "\nID: " + carregadorID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
+				+ "\nCategoria: " + categoria;
+	}
 
 	public String getNome() {
 		return nome;

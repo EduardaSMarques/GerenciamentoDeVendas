@@ -9,24 +9,6 @@ public abstract class Produto {
 	protected String descricao;
 	protected String categoria;
 	private Fornecedor fornecedor;
-	private Estoque[] produtosEstoque = new Estoque[20];
-	private int numProdutos = 0;
-	
-	public Estoque[] getProdutosEstoque() {
-		return produtosEstoque;
-	}
-
-	public void setProdutosEstoque(Estoque[] produtosEstoque) {
-		this.produtosEstoque = produtosEstoque;
-	}	
-
-	public int getNumProdutos() {
-		return numProdutos;
-	}
-
-	public void setNumProdutos(int numProdutos) {
-		this.numProdutos = numProdutos;
-	}
 
 	public String getNome() {
 		return nome;
@@ -82,15 +64,6 @@ public abstract class Produto {
 
 	public void setFornecedor(Fornecedor fornecedor) {
 		this.fornecedor = fornecedor;
-	}
-	
-	public String mostraEstoque() {
-		String mostra = "============== ESTOQUE ============== \n" ;
-		for(int i = 0; i < numProdutos; i++) {
-			System.out.println(i);
-			mostra = mostra + "\n"+ produtosEstoque[i].toString();
-		}
-		return mostra;
 	}
 
 }

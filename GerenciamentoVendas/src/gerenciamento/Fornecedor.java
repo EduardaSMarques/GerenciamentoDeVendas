@@ -14,8 +14,7 @@ public class Fornecedor {
 	}
 	
 	public String toString() {
-		return  "\n============ FORNECEDORES ============"
-				+ "\nNome do Fornecedor: "+ nome + "\nTelefone: " + telefone 
+		return  "\nNome do Fornecedor: "+ nome + "\nTelefone: " + telefone 
 				+ "\nEndereço: " + endereco + "\nCNPJ: " + cnpj 
 				+ "\nE-mail: " + email + "\nProduto Fornecido: " + produtoFornecido;
 	}

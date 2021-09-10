@@ -34,6 +34,11 @@ public class Fone extends Produto {
 				+ "\nTipo do Fone: " + tipoDoFone + "\nModelo: " + modelo 
 				+ "\nDescrição: " + descricao + "\nCategoria: " + categoria;
 	}
+	
+	public String toStringReduzido() {
+		return "\nID: " + foneID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
+				+ "\nCategoria: " + categoria;
+	}
 		
 	public String getNome() {
 		return nome;

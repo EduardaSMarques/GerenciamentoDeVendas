@@ -13,8 +13,7 @@ public class Funcionario {
 	}
 	
 	public String toString() {
-		return "\n============ FUNCIONÁRIOS ============"
-				+ "\nNome do funcionário: " + nome + "\nTelefone: " + telefone
+		return 	"\nNome do funcionário: " + nome + "\nTelefone: " + telefone
 				+ "\nE-mail: " + email + "\nEndereço: " + endereco 
 				+ "\nSalário: " + salario;
 	}

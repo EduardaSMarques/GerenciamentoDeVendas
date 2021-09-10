@@ -31,6 +31,11 @@ public class Capa extends Produto {
 				+ "\nCor: " + cor + "\nTextura: " + textura + "\nModelo: " + modelo + "\nDescrição: " + descricao
 				+ "\nCategoria: " + categoria;
 	}
+	
+	public String toStringReduzido() {
+		return "\nID: " + capaID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
+				+ "\nCategoria: " + categoria;
+	}
 
 	public String getNome() {
 		return nome;

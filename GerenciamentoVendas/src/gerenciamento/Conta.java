@@ -1,36 +1,30 @@
 package gerenciamento;
 
-import java.util.Date;
-
 public class Conta {
 	
 	private String nome;
 	private String descricao;
 	private int parcelas;
 	private double preco;
-	private Date vencimento;
 	private String dia;
 	private String mes;
 	private String ano;
 	private String status;
 	
-	public Conta() {
-		
-	}
-	
-	public Conta(String nom, String desc, int parc, double pre, Date venc, String sta) {
+	public Conta(String nom, String desc, int parc, double pre, String d, String m, String a, String sta) {
 		nome = nom;
 		descricao = desc;
 		parcelas = parc;
 		preco = pre;
-		vencimento = venc;
+		dia = d;
+		mes = m;
+		ano = a;
 		status = sta;
 	}
 	
 	public String toString() {
-		return  "\n============ CONTAS A PAGAR ============"
-				+ "\nNome: "+ nome + "\nDescrição: " + descricao + "\nParcelas: " + parcelas 
-				+ "\nPreço: " + preco + "\nVencimento: " + vencimento + "\nStatus: " + status;
+		return 	"\nNome: "+ nome + "\nDescrição: " + descricao + "\nParcelas: " + parcelas 
+				+ "\nPreço: " + preco + "\nVencimento: " + dia + "/" + mes + "/" + ano + "\nStatus: " + status;
 	}
 
 	public String getNome() {
@@ -65,24 +59,36 @@ public class Conta {
 		this.preco = preco;
 	}
 
-	public Date getVencimento() {
-		return vencimento;
+	public String getDia() {
+		return dia;
 	}
 
-	public void setVencimento(Date vencimento) {
-		this.vencimento = vencimento;
+	public void setDia(String dia) {
+		this.dia = dia;
 	}
 
+	public String getMes() {
+		return mes;
+	}
+
+	public void setMes(String mes) {
+		this.mes = mes;
+	}
+
+	public String getAno() {
+		return ano;
+	}
+
+	public void setAno(String ano) {
+		this.ano = ano;
+	}
+	
 	public String getStatus() {
 		return status;
 	}
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-	
-	public String dataVencimento(String dd, String MM, String yyyy) {
-		return  dia + "/" + mes + "/" + ano; 
 	}
 
 }

@@ -30,6 +30,11 @@ public class Pelicula extends Produto {
 				+ "\nDescrição: " + descricao + "\nCategoria: " + categoria;
 	}
 	
+	public String toStringReduzido() {
+		return "\nID: " + peliculaID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
+				+ "\nCategoria: " + categoria;
+	}
+	
 	public String getNome() {
 		return nome;
 	}

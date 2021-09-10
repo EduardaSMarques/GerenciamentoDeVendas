@@ -14,8 +14,7 @@ public class Cliente {
 	}
 	
 	public String toString() {
-		return  "\n============ CLIENTES ============"
-				+ "\nID: "+ clienteID + "\nNome do Cliente: " + nome + "\nCPF: " + numCPF 
+		return  "\nID: "+ clienteID + "\nNome do Cliente: " + nome + "\nCPF: " + numCPF 
 				+ "\nTelefone: " + telefone + "\nE-mail: " + email + "\nGenero: " + genero;
 	}	
 	
