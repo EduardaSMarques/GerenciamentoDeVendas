@@ -1,38 +1,34 @@
-package gerenciamento;
+package modelo;
 
-public class Fone extends Produto {
-
-	private int foneID;
-	private String cor;
-	private String textura;
-	private String tipoDoFone;
+public class Pelicula extends Produto {
 	
+	private int peliculaID;
+	private String textura;
+
 	// Sobrecarga
-	public Fone(int id, String nom, Double pre, String mat, String c, String tex, String tipFon, String mod, String des, String cat) {
-		foneID = id;
+	public Pelicula(int id, String nom, Double pre, String mat, String tex, String mod, String des, String cat) {	
+		peliculaID = id;
 		nome = nom;
 		preco = pre;
 		material = mat;
-		cor = c;
 		textura = tex;
-		tipoDoFone = tipFon;
 		modelo = mod;
 		descricao = des;
 		categoria = cat;
 	}
-
-	public Fone(int id, String nom, Double pre, String cat) {
-		foneID = id;
+	
+	public Pelicula(int id, String nom, Double pre, String cat) {
+		peliculaID = id;
 		nome = nom;
 		preco = pre;
 		categoria = cat;
 	}
 	
 	public String toStringReduzido() {
-		return "\nID: " + foneID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
+		return "\nID: " + peliculaID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
 				+ "\nCategoria: " + categoria;
 	}
-		
+	
 	public String getNome() {
 		return nome;
 	}
@@ -81,22 +77,14 @@ public class Fone extends Produto {
 		this.categoria = categoria;
 	}
 	
-	public int getFoneID() {
-		return foneID;
+	public int getPeliculaID() {
+		return peliculaID;
 	}
 
-	public void setFoneID(int foneID) {
-		this.foneID = foneID;
+	public void setPeliculaID(int peliculaID) {
+		this.peliculaID = peliculaID;
 	}
 	
-	public String getCor() {
-		return cor;
-	}
-
-	public void setCor(String cor) {
-		this.cor = cor;
-	}
-
 	public String getTextura() {
 		return textura;
 	}
@@ -105,12 +93,4 @@ public class Fone extends Produto {
 		this.textura = textura;
 	}
 
-	public String getTipoDoFone() {
-		return tipoDoFone;
-	}
-
-	public void setTipoDoFone(String tipoDoFone) {
-		this.tipoDoFone = tipoDoFone;
-	}
-	
 }

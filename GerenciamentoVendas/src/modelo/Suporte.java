@@ -1,39 +1,40 @@
-package gerenciamento;
+package modelo;
 
-public class Carregador extends Produto {
-
-	private int carregadorID;
+public class Suporte extends Produto {
+	
+	private int suporteID;
 	private String cor;
-	private String potencia;
-	private String tipoDeEntrada;
+	private String textura;
+	private String tipoDoSuporte;
+	private String tamanho;
 
 	// Sobrecarga
-	public Carregador(int id, String nom, Double pre, String mat, String c, String pot, String tipEnt, String mod,
-			String des, String cat) {
-		carregadorID = id;
+	public Suporte(int id, String nom, Double pre, String mat, String c, String tex, String tipSup, String tam, String mod, String des, String cat) {
+		suporteID = id;
 		nome = nom;
 		preco = pre;
 		material = mat;
 		cor = c;
-		potencia = pot;
-		tipoDeEntrada = tipEnt;
+		textura = tex;
+		tipoDoSuporte = tipSup;
+		tamanho = tam;
 		modelo = mod;
 		descricao = des;
 		categoria = cat;
 	}
-
-	public Carregador(int id, String nom, Double pre, String cat) {
-		carregadorID = id;
+	
+	public Suporte(int id, String nom, Double pre, String cat) {
+		suporteID = id;
 		nome = nom;
 		preco = pre;
 		categoria = cat;
 	}
 	
 	public String toStringReduzido() {
-		return "\nID: " + carregadorID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
+		return "\nID: " + suporteID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
 				+ "\nCategoria: " + categoria;
 	}
-
+	
 	public String getNome() {
 		return nome;
 	}
@@ -81,13 +82,13 @@ public class Carregador extends Produto {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-
-	public int getCarregadorID() {
-		return carregadorID;
+	
+	public int getSuporteID() {
+		return suporteID;
 	}
 
-	public void setCarregadorID(int carregadorID) {
-		this.carregadorID = carregadorID;
+	public void setSuporteID(int suporteID) {
+		this.suporteID = suporteID;
 	}
 
 	public String getCor() {
@@ -98,20 +99,28 @@ public class Carregador extends Produto {
 		this.cor = cor;
 	}
 
-	public String getPotencia() {
-		return potencia;
+	public String getTextura() {
+		return textura;
 	}
 
-	public void setPotencia(String potencia) {
-		this.potencia = potencia;
+	public void setTextura(String textura) {
+		this.textura = textura;
 	}
 
-	public String getTipoDeEntrada() {
-		return tipoDeEntrada;
+	public String getTipoDoSuporte() {
+		return tipoDoSuporte;
 	}
 
-	public void setTipoDeEntrada(String tipoDeEntrada) {
-		this.tipoDeEntrada = tipoDeEntrada;
+	public void setTipoDoSuporte(String tipoDoSuporte) {
+		this.tipoDoSuporte = tipoDoSuporte;
+	}
+
+	public String getTamanho() {
+		return tamanho;
+	}
+
+	public void setTamanho(String tamanho) {
+		this.tamanho = tamanho;
 	}
 
 }

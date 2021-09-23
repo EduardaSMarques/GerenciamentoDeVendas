@@ -1,4 +1,4 @@
-package gerenciamento;
+package modelo;
 
 import java.util.Scanner;
 
@@ -18,8 +18,6 @@ public class Test {
 	static Conta con3;
 	static Conta con4;
 	static Estoque e1;
-	static Fornecedor forn1;
-	static Fornecedor forn2;
 	static Funcionario fun1;
 	static Funcionario fun2;
 	static Produto pr;
@@ -37,23 +35,23 @@ public class Test {
 		
 		// cadastro de capa
 		c = new Capa(10000, "capa1", 5.99, "Capas");
-		e1.incluirProdutosEstoque(c, 0); //incluindo no array de produtos
+		e1.incluirProdtuEstoque(c, 0); //incluindo no array de produtos
 		// cadastro de carregador
 		crr = new Carregador(01000, "Carregador1", 7.68, "Carregadores");
-		e2.incluirProdutosEstoque(crr, 1);
+		e2.incluirProdtuEstoque(crr, 1);
 		// cadastro de suportes
 		s1 = new Suporte(00100, "Suporte1", 40.13, "Suporte");
-		e3.incluirProdutosEstoque(s1, 2);
+		e3.incluirProdtuEstoque(s1, 2);
 		s2 = new Suporte(00110, "suporte2", 38.90, "Suporte");
-		e4.incluirProdutosEstoque(s2, 3);
+		e4.incluirProdtuEstoque(s2, 3);
 		// cadastro de pelicula
 		p = new Pelicula(00010, "Película1", 50.30, "Película");
-		e5.incluirProdutosEstoque(p, 4);
+		e5.incluirProdtuEstoque(p, 4);
 		// cadastro de fones
 		f1 = new Fone(00001, "fone1", 90.8, "Fones");
-		e6.incluirProdutosEstoque(f1, 5);
+		e6.incluirProdtuEstoque(f1, 5);
 		f2 = new Fone(00011, "fone2", 899.8, "Fones");
-		e7.incluirProdutosEstoque(f2, 6);
+		e7.incluirProdtuEstoque(f2, 6);
 
 		// pegando os preços dos produtos e somando eles
 		Double precoProdCapa = c.getPreco();
@@ -102,10 +100,7 @@ public class Test {
 		con2 = new Conta("conta2", "pagamento de funcionários", 3, 2501.86, "2", "9", "2021", "ainda não foi pago");
 		con3 = new Conta("cliente1", "pagamento de 3 produtos comprados", 12, 300.99, "19", "12", "2021", "ainda não pagou");
 		con4 = new Conta("cliente3", "pagamento de 2 produtos comprados", 5, 54.87, "13", "11", "2021", "ainda não pagou");
-		// cadastro de fornecedor
-		forn1 = new Fornecedor("fornecedor1", 987772, "q2-23", "6762", "fornecedor1@email.com", "Capas");
-		forn2 = new Fornecedor("fornecedor2", 982272, "q2-23", "6762", "fornecedor2@email.com", "Carregadores");
-		// cadastro de fornecedor
+		// cadastro de funcionario
 		fun1 = new Funcionario("funcionario1", 9863464, "funcionario1@email.com", "q16 etd", 1200.98);
 		fun2 = new Funcionario("funcionario2", 9113464, "funcionario2@email.com", "q10 etd", 1300.88);
 
@@ -124,10 +119,6 @@ public class Test {
 		System.out.println(con3.toString());
 		System.out.println("----------------------------------------");
 		System.out.print(con4.toString());
-		System.out.println("\n\n============ FORNECEDORES ============");
-		System.out.println(forn1.toString());
-		System.out.println("--------------------------------------");
-		System.out.print(forn2.toString());
 		System.out.println("\n\n============ FUNCIONÁRIOS ============");
 		System.out.println(fun1.toString());
 		System.out.println("--------------------------------------");

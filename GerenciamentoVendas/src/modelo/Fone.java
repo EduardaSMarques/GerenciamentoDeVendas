@@ -1,40 +1,38 @@
-package gerenciamento;
+package modelo;
 
-public class Suporte extends Produto {
-	
-	private int suporteID;
+public class Fone extends Produto {
+
+	private int foneID;
 	private String cor;
 	private String textura;
-	private String tipoDoSuporte;
-	private String tamanho;
-
+	private String tipoDoFone;
+	
 	// Sobrecarga
-	public Suporte(int id, String nom, Double pre, String mat, String c, String tex, String tipSup, String tam, String mod, String des, String cat) {
-		suporteID = id;
+	public Fone(int id, String nom, Double pre, String mat, String c, String tex, String tipFon, String mod, String des, String cat) {
+		foneID = id;
 		nome = nom;
 		preco = pre;
 		material = mat;
 		cor = c;
 		textura = tex;
-		tipoDoSuporte = tipSup;
-		tamanho = tam;
+		tipoDoFone = tipFon;
 		modelo = mod;
 		descricao = des;
 		categoria = cat;
 	}
-	
-	public Suporte(int id, String nom, Double pre, String cat) {
-		suporteID = id;
+
+	public Fone(int id, String nom, Double pre, String cat) {
+		foneID = id;
 		nome = nom;
 		preco = pre;
 		categoria = cat;
 	}
 	
 	public String toStringReduzido() {
-		return "\nID: " + suporteID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
+		return "\nID: " + foneID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
 				+ "\nCategoria: " + categoria;
 	}
-	
+		
 	public String getNome() {
 		return nome;
 	}
@@ -58,7 +56,7 @@ public class Suporte extends Produto {
 	public void setMaterial(String material) {
 		this.material = material;
 	}
-
+	
 	public String getModelo() {
 		return modelo;
 	}
@@ -83,14 +81,14 @@ public class Suporte extends Produto {
 		this.categoria = categoria;
 	}
 	
-	public int getSuporteID() {
-		return suporteID;
+	public int getFoneID() {
+		return foneID;
 	}
 
-	public void setSuporteID(int suporteID) {
-		this.suporteID = suporteID;
+	public void setFoneID(int foneID) {
+		this.foneID = foneID;
 	}
-
+	
 	public String getCor() {
 		return cor;
 	}
@@ -107,20 +105,12 @@ public class Suporte extends Produto {
 		this.textura = textura;
 	}
 
-	public String getTipoDoSuporte() {
-		return tipoDoSuporte;
+	public String getTipoDoFone() {
+		return tipoDoFone;
 	}
 
-	public void setTipoDoSuporte(String tipoDoSuporte) {
-		this.tipoDoSuporte = tipoDoSuporte;
+	public void setTipoDoFone(String tipoDoFone) {
+		this.tipoDoFone = tipoDoFone;
 	}
-
-	public String getTamanho() {
-		return tamanho;
-	}
-
-	public void setTamanho(String tamanho) {
-		this.tamanho = tamanho;
-	}
-
+	
 }

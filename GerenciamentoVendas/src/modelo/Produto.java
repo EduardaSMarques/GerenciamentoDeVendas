@@ -1,4 +1,4 @@
-package gerenciamento;
+package modelo;
 
 public abstract class Produto {
 	
@@ -8,7 +8,6 @@ public abstract class Produto {
 	protected String modelo;
 	protected String descricao;
 	protected String categoria;
-	private Fornecedor fornecedor;
 
 	public String getNome() {
 		return nome;
@@ -56,14 +55,6 @@ public abstract class Produto {
 
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
-	}
-
-	public Fornecedor getFornecedor() {
-		return fornecedor;
-	}
-
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
 	}
 
 }

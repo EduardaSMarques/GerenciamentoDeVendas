@@ -1,33 +1,36 @@
-package gerenciamento;
+package modelo;
 
-public class Capa extends Produto {
+public class Carregador extends Produto {
 
-	private int capaID;
+	private int carregadorID;
 	private String cor;
-	private String textura;
+	private String potencia;
+	private String tipoDeEntrada;
 
 	// Sobrecarga
-	public Capa(int id, String nom, Double pre, String mat, String c, String tex, String mod, String des, String cat) {
-		capaID = id;
+	public Carregador(int id, String nom, Double pre, String mat, String c, String pot, String tipEnt, String mod,
+			String des, String cat) {
+		carregadorID = id;
 		nome = nom;
 		preco = pre;
 		material = mat;
 		cor = c;
-		textura = tex;
+		potencia = pot;
+		tipoDeEntrada = tipEnt;
 		modelo = mod;
 		descricao = des;
 		categoria = cat;
 	}
 
-	public Capa(int id, String nom, Double pre, String cat) {
-		capaID = id;
+	public Carregador(int id, String nom, Double pre, String cat) {
+		carregadorID = id;
 		nome = nom;
 		preco = pre;
 		categoria = cat;
 	}
 	
 	public String toStringReduzido() {
-		return "\nID: " + capaID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
+		return "\nID: " + carregadorID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
 				+ "\nCategoria: " + categoria;
 	}
 
@@ -79,12 +82,12 @@ public class Capa extends Produto {
 		this.categoria = categoria;
 	}
 
-	public int getCapaID() {
-		return capaID;
+	public int getCarregadorID() {
+		return carregadorID;
 	}
 
-	public void setCapaID(int capaID) {
-		this.capaID = capaID;
+	public void setCarregadorID(int carregadorID) {
+		this.carregadorID = carregadorID;
 	}
 
 	public String getCor() {
@@ -95,12 +98,20 @@ public class Capa extends Produto {
 		this.cor = cor;
 	}
 
-	public String getTextura() {
-		return textura;
+	public String getPotencia() {
+		return potencia;
 	}
 
-	public void setTextura(String textura) {
-		this.textura = textura;
+	public void setPotencia(String potencia) {
+		this.potencia = potencia;
+	}
+
+	public String getTipoDeEntrada() {
+		return tipoDeEntrada;
+	}
+
+	public void setTipoDeEntrada(String tipoDeEntrada) {
+		this.tipoDeEntrada = tipoDeEntrada;
 	}
 
 }

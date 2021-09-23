@@ -1,34 +1,36 @@
-package gerenciamento;
+package modelo;
 
-public class Pelicula extends Produto {
-	
-	private int peliculaID;
+public class Capa extends Produto {
+
+	private int capaID;
+	private String cor;
 	private String textura;
 
 	// Sobrecarga
-	public Pelicula(int id, String nom, Double pre, String mat, String tex, String mod, String des, String cat) {	
-		peliculaID = id;
+	public Capa(int id, String nom, Double pre, String mat, String c, String tex, String mod, String des, String cat) {
+		capaID = id;
 		nome = nom;
 		preco = pre;
 		material = mat;
+		cor = c;
 		textura = tex;
 		modelo = mod;
 		descricao = des;
 		categoria = cat;
 	}
-	
-	public Pelicula(int id, String nom, Double pre, String cat) {
-		peliculaID = id;
+
+	public Capa(int id, String nom, Double pre, String cat) {
+		capaID = id;
 		nome = nom;
 		preco = pre;
 		categoria = cat;
 	}
 	
 	public String toStringReduzido() {
-		return "\nID: " + peliculaID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
+		return "\nID: " + capaID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
 				+ "\nCategoria: " + categoria;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -52,7 +54,7 @@ public class Pelicula extends Produto {
 	public void setMaterial(String material) {
 		this.material = material;
 	}
-	
+
 	public String getModelo() {
 		return modelo;
 	}
@@ -76,15 +78,23 @@ public class Pelicula extends Produto {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	
-	public int getPeliculaID() {
-		return peliculaID;
+
+	public int getCapaID() {
+		return capaID;
 	}
 
-	public void setPeliculaID(int peliculaID) {
-		this.peliculaID = peliculaID;
+	public void setCapaID(int capaID) {
+		this.capaID = capaID;
 	}
-	
+
+	public String getCor() {
+		return cor;
+	}
+
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
+
 	public String getTextura() {
 		return textura;
 	}
