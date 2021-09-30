@@ -1,5 +1,7 @@
 package visualiza;
 
+import controle.*;
+
 import javax.swing.*;
 
 import java.awt.Font;
@@ -18,6 +20,7 @@ public class MenuPrincipal implements ActionListener{
 	private JLabel fun = new JLabel("Funcionários");
 	private static JButton estoque = new JButton("");
 	private JLabel est = new JLabel("Estoque");
+	public static ControleDado dads = new ControleDado();
 	
 	public MenuPrincipal() {
 		vendas.setIcon(new ImageIcon("imgFundo.jpeg"));
@@ -82,7 +85,7 @@ public class MenuPrincipal implements ActionListener{
 
 		}
 		if (src == funcionarios) {
-
+			new JanelaFuncionario().mostraTelaFuncio(dads);
 		}		
 		
 		if (src == estoque) {
