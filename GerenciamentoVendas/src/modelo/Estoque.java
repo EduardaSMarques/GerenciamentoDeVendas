@@ -14,7 +14,8 @@ public class Estoque {
 	
 	private int numProdutos = 0;
 	
-	public Estoque(String nom, int qantForn, double preQuantF) {
+	public Estoque(String cat, String nom, int qantForn, double preQuantF) {
+		categoriaProd = cat;
 		nomeProd = nom;
 		quantidadeFornecida = qantForn;
 		precoDaQuantFornecida = preQuantF;

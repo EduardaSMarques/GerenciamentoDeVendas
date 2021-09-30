@@ -16,13 +16,13 @@ import java.awt.event.ActionListener;
 public class JanelaFuncionario implements ActionListener, ListSelectionListener {
 	
 	private static JFrame janelaEstoque = new JFrame("Gerenciamento de Vendas");
-	private static JPanel panelEstoque = new JPanel();
+	private static JPanel panelFuncionario = new JPanel();
 	private static JPanel panelCadastrar = new JPanel();
 	private static ControleDado dads;
-	private static JanelaDadosFuncionario jf;
 	private static String[] listaNomes = new String[50];
+	private static String[] listaPesquisa = new String[20];
+	private JList<String> listaPesquisaTemporaria;
 	private JList<String> listaFuncionarios;
-	
 
 	private static JLabel titulo1 = new JLabel("Funcionários");
 	private static JLabel titulo2 = new JLabel("Cadastrar Funcionário");
@@ -40,13 +40,13 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 	private static JTextField texSalario = new JTextField();
 	private static JButton btnBuscar = new JButton("Buscar");
 	private static JButton btnAtualizar = new JButton("Atualizar");
-	private static JButton btnFinaliCadast = new JButton("Finalizar o cadastramento");
+	private static JButton btnFinaliCadast = new JButton("Cadastrar");
 	private String[] cadastraDadosNovos = new String[9];
 	
 	public void mostraTelaFuncio(ControleDado dad) {
 		dads = dad;
 		
-		panelEstoque.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.RIGHT, TitledBorder.BELOW_TOP, null, new Color(0, 0, 0)));
+		panelFuncionario.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.RIGHT, TitledBorder.BELOW_TOP, null, new Color(0, 0, 0)));
 		panelCadastrar.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.RIGHT, TitledBorder.BELOW_TOP, null, new Color(0, 0, 0)));
 		titulo1.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 40));
 		titulo2.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 40));
@@ -65,7 +65,7 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		listaFuncionarios.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		listaFuncionarios.setVisibleRowCount(10);
 		
-		panelEstoque.setBounds(10, 10, 782, 325);
+		panelFuncionario.setBounds(10, 10, 782, 325);
 		panelCadastrar.setBounds(10, 340, 782, 241);
 		titulo1.setBounds(261, 0, 303, 46);
 		titulo2.setBounds(208, 0, 450, 56);
@@ -83,19 +83,19 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		texSalario.setBounds(492, 150, 131, 26);
 		btnBuscar.setBounds(482, 77, 97, 40);
 		btnAtualizar.setBounds(659, 275, 113, 40);
-		btnFinaliCadast.setBounds(516, 191, 256, 40);
+		btnFinaliCadast.setBounds(567, 191, 205, 40);
 		listaFuncionarios.setBounds(10, 124, 762, 141);
 		
 		janelaEstoque.setLayout(null);
-		panelEstoque.setLayout(null);
+		panelFuncionario.setLayout(null);
 		panelCadastrar.setLayout(null);
 		
-		panelEstoque.add(titulo1);
-		panelEstoque.add(labelPesq);
-		panelEstoque.add(texPesq);
-		panelEstoque.add(listaFuncionarios);
-		panelEstoque.add(btnBuscar);
-		panelEstoque.add(btnAtualizar);
+		panelFuncionario.add(titulo1);
+		panelFuncionario.add(labelPesq);
+		panelFuncionario.add(texPesq);
+		panelFuncionario.add(listaFuncionarios);
+		panelFuncionario.add(btnBuscar);
+		panelFuncionario.add(btnAtualizar);
 		
 		panelCadastrar.add(titulo2);
 		panelCadastrar.add(labelNome);
@@ -106,12 +106,11 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		panelCadastrar.add(texEmail);
 		panelCadastrar.add(labelTelefone);
 		panelCadastrar.add(texTelefone);
-		panelCadastrar.add(labelTelefone);
 		panelCadastrar.add(labelSalario);
 		panelCadastrar.add(texSalario);
 		panelCadastrar.add(btnFinaliCadast);
 		
-		janelaEstoque.add(panelEstoque);
+		janelaEstoque.add(panelFuncionario);
 		janelaEstoque.add(panelCadastrar);
 		
 		janelaEstoque.setBounds(100, 100, 816, 628);
@@ -122,7 +121,6 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		btnAtualizar.addActionListener(this);
 		btnFinaliCadast.addActionListener(this);
 		listaFuncionarios.addListSelectionListener(this);
-		
 
 	}
 
@@ -130,12 +128,7 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		Object src = e.getSource();
 		
 		if (src == btnBuscar) {
-			String nomeBuscar = texPesq.getText();
-			boolean ComparaResult = comparaNome(nomeBuscar);
-			if (ComparaResult == true) 
-				listaFuncionarios.getName();
-			else if (ComparaResult == false)
-				msgErro();
+			
 		}
 
 		if (src == btnAtualizar) {
@@ -146,7 +139,7 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		if (src == btnFinaliCadast) {
 			try {
 				boolean truOrFals;
-				//editar dados do funcionario 
+				//cadastrar funcionario
 				cadastraDadosNovos[0] = Integer.toString(dads.getQtdFuncionarios());
 
 				cadastraDadosNovos[1] =  texNome.getText();
@@ -155,7 +148,7 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 				cadastraDadosNovos[4] =  texEndereco.getText();
 				cadastraDadosNovos[5] =  texSalario.getText();
 
-				//novo valor boolean para o truOrFals
+				//valor boolean para o truOrFals
 				truOrFals = dads.AdicionarEditarFuncio(cadastraDadosNovos);
 				
 
@@ -181,6 +174,11 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 					listaFuncionarios.getSelectedIndex());
 		}
 		
+		if(src == listaPesquisaTemporaria) {
+			new JanelaDadosFuncionario().VerDadosEditar(1, dads,
+					listaPesquisaTemporaria.getSelectedIndex());
+		}
+		
 	}
 	
 	public boolean comparaNome(String nome) {
@@ -190,19 +188,31 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		}
 		return false;
 	}
-
-	public String buscaPegaNome() {
+	
+	public void testBusca() {
+		int indice = 0;
 		String nomeBuscar = texPesq.getText();
 		boolean ComparaResult = comparaNome(nomeBuscar);
 		if (ComparaResult == true) {
+			listaPesquisa[indice] = nomeBuscar;
+			listaFuncionarios.setVisible(false);
+			listaPesquisaTemporaria = new JList<String>(listaPesquisa);
+			listaPesquisaTemporaria.setBounds(10, 124, 762, 141);
+			panelFuncionario.add(listaPesquisaTemporaria);
+		} else {
 			msgErro();
 		}
-		return nomeBuscar;
+		
 	}
 	
 	public void msgErro() {
 		JOptionPane.showMessageDialog(null,"Nome não encontrado!", null, 
 				JOptionPane.ERROR_MESSAGE);
+	}
+	
+	public void msgAchou() {
+		JOptionPane.showMessageDialog(null,"encontrado!", null, 
+				JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	public void msgCadastroFuncionarioSucesso() {
@@ -218,4 +228,5 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 				+ "2) Não foi preenchido de maneira correta em (Telefone e Salário), ambos só podem conter números.", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
+	
 }

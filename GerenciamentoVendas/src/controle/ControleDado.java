@@ -88,15 +88,50 @@ public class ControleDado {
 
 	public int getQtdSuportes() {
 		return this.d.getQtdSuportes();
+	}	
+	
+	public boolean AdicionarEditarEstoque(String[] dadosEstoq) {
+		if(!dadosEstoq[3].matches("[0-9]+")) { //se o dado nao sao numeros no indice mencionado retorna false
+			return false;
+		} else {
+				Estoque e = new Estoque(dadosEstoq[1], dadosEstoq[2], Integer.parseInt(dadosEstoq[3])
+						, Double.parseDouble(dadosEstoq[4]));
+				d.inserirEditarEstoque(e, Integer.parseInt(dadosEstoq[0])); //adicionar dados
+				return true;
+		}
+	}
+	
+	public boolean removerEstoque(int i) {
+		int qtdMat = d.getQtdEstoques();
+		String removeuEstoque = d.getEstoques()[i].getNomeProd();
+		
+		if(i == (d.getQtdEstoques() - 1)) { // remoção do estoque pelo o final do array
+			d.setQtdEstoques(d.getQtdEstoques() - 1);
+			d.getEstoques()[d.getQtdEstoques()] = null;
+			return true;
+		} else  { // remoção do funcionario pelo o meio do array
+			int cont = 0;
+			while(d.getEstoques()[cont].getNomeProd().compareTo(removeuEstoque) != 0) {
+				cont++;
+			}
+			
+			for(int j = cont; j < d.getQtdEstoques() - 1; j++) {
+				d.getEstoques()[j] = null;
+				d.getEstoques()[j] = d.getEstoques()[j+1];
+			}
+			d.getEstoques()[d.getQtdEstoques()] = null;
+			d.setQtdEstoques(d.getQtdEstoques() - 1);
+			return true;
+		}
 	}
 	
 	public boolean AdicionarEditarFuncio(String[] dadosFuncionarios) {
-		if(!dadosFuncionarios[2].matches("[0-9]+")) {
+		if(!dadosFuncionarios[2].matches("[0-9]+")) { //se o dado nao sao numeros no indice mencionado retorna false
 			return false;
 		} else {
 				Funcionario f = new Funcionario(dadosFuncionarios[1], Integer.parseInt(dadosFuncionarios[2]), 
 						dadosFuncionarios[3], dadosFuncionarios[4],Double.parseDouble(dadosFuncionarios[5]));
-				d.inserirEditarFuncionario(f, Integer.parseInt(dadosFuncionarios[0])); //add dado novo do cadastro 
+				d.inserirEditarFuncionario(f, Integer.parseInt(dadosFuncionarios[0])); //adicionar dados 
 				return true;
 		}
 	}
@@ -105,16 +140,16 @@ public class ControleDado {
 	public boolean removerFuncionario(int i) {
 		String removeuFuncionario = d.getFuncionarios()[i].getNome();
 		
-		if(i == (d.getQtdFuncionarios() - 1)) { // Remoção do funcionario pelo o final do array
+		if(i == (d.getQtdFuncionarios() - 1)) { // remoção do funcionario pelo o final do array
 			d.setQtdFuncionarios(d.getQtdFuncionarios() - 1);
 			d.getFuncionarios()[d.getQtdFuncionarios()] = null;
 			return true;
-		} else { // Remoção do funcionario pelo o meio do array
+		} else { // remoção do funcionario pelo o meio do array
 			int contador = 0;
 			while(d.getFuncionarios()[contador].getNome().compareTo(removeuFuncionario) != 0) {
 				contador++;
 			}
-			//Rotina atualiza
+			
 			for(int num = contador; num < d.getQtdFuncionarios() - 1; num++) {
 				d.getFuncionarios()[num] = null;
 				d.getFuncionarios()[num] = d.getFuncionarios()[num+1];

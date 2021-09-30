@@ -89,7 +89,7 @@ public class MenuPrincipal implements ActionListener{
 		}		
 		
 		if (src == estoque) {
-			new JanelaEstoque().mostraTelaEstoq();
+			new JanelaEstoque().mostraTelaEstoq(dads);
 		}
 	}
 

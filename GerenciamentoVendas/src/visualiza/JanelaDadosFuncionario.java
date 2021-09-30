@@ -31,7 +31,6 @@ public class JanelaDadosFuncionario implements ActionListener {
 	private static ControleDado dads;
 	private int posicao;
 	private int opcao;
-	private String s;
 
 	public void VerDadosEditar(int op, ControleDado d, int pos) {
 
@@ -39,14 +38,13 @@ public class JanelaDadosFuncionario implements ActionListener {
 		dads = d;
 		posicao = pos;
 
-		//Preenche dados com dados do aluno clicado
+		//Campos do JTexField sendo preenchidos por dados do funcionario selecionado
 		if (op == 1) {
 			texNome = new JTextField(dads.getFuncionarios()[pos].getNome(), 100);
 			texTelefone = new JTextField(String.valueOf(dads.getFuncionarios()[pos].getTelefone()), 20);
 			texEmail = new JTextField(dads.getFuncionarios()[pos].getEmail(), 100);
 			texEndereco = new JTextField(dads.getFuncionarios()[pos].getEndereco(), 100);
 			texSalario = new JTextField(String.valueOf(dads.getFuncionarios()[pos].getSalario()), 20);
-			
 		} 
 		
 		titulo1.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 34));
@@ -55,6 +53,8 @@ public class JanelaDadosFuncionario implements ActionListener {
 		labelEmail.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 20));
 		labelEndereo.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 20));
 		labelSalario.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 20));
+		btnSalvar.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 17));
+		btnExcluir.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 17));
 		separa1.setBackground(Color.LIGHT_GRAY);
 		separa1.setForeground(Color.BLACK);
 		separa2.setBackground(Color.LIGHT_GRAY);
@@ -73,7 +73,7 @@ public class JanelaDadosFuncionario implements ActionListener {
 		texEndereco.setBounds(119, 326, 471, 26);
 		labelSalario.setBounds(121, 362, 103, 34);
 		texSalario.setBounds(119, 393, 131, 26);
-		btnSalvar.setBounds(375, 471, 202, 40);
+		btnSalvar.setBounds(480, 471, 97, 40);
 		btnExcluir.setBounds(597, 471, 97, 40);
 
 		janelaDadsFuncio.add(titulo1);
@@ -95,12 +95,12 @@ public class JanelaDadosFuncionario implements ActionListener {
 		janelaDadsFuncio.setLayout(null);
 
 		janelaDadsFuncio.setBounds(100, 100, 730, 561);
+		janelaDadsFuncio.setLocationRelativeTo(null); //para janela ficar centralizada na hora de abrir
 		janelaDadsFuncio.setVisible(true);
 
 		btnSalvar.addActionListener(this);
 		btnExcluir.addActionListener(this);
 	}
-
 
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
@@ -108,7 +108,7 @@ public class JanelaDadosFuncionario implements ActionListener {
 			try {
 				boolean truOrFals;
 				if(opcao == 1)
-					novoDado[0] = Integer.toString(posicao);
+					novoDado[0] = Integer.toString(posicao); //editar os dados
 
 				novoDado[1] =  texNome.getText();
 				novoDado[2] =  texTelefone.getText();
@@ -116,10 +116,9 @@ public class JanelaDadosFuncionario implements ActionListener {
 				novoDado[4] =  texEndereco.getText();
 				novoDado[5] =  texSalario.getText();
 
-				//novo valor boolean para o truOrFals
+				//valor boolean para o truOrFals
 				truOrFals = dads.AdicionarEditarFuncio(novoDado);
 				
-
 				if(truOrFals) {
 					msgSalvarFuncionarioSucesso();
 				}
@@ -134,9 +133,9 @@ public class JanelaDadosFuncionario implements ActionListener {
 
 		if(src == btnExcluir) {
 			boolean truOrFals = false;
-
-			if (opcao == 1) {//exclui aluno
-				truOrFals = dads.removerFuncionario(posicao);
+			
+			if (opcao == 1) {
+				truOrFals = dads.removerFuncionario(posicao); //Exclui dados do funcionario funcionario
 				if (truOrFals) msgExcluirFuncionarioSucesso(); 
 				else msgExcluirFuncionarioErro(); 
 			}			
@@ -144,7 +143,8 @@ public class JanelaDadosFuncionario implements ActionListener {
 	}
 
 	public void msgExcluirFuncionarioSucesso() {
-		JOptionPane.showMessageDialog(null, "Os Dados do Funcionário Foram Excluidos!", null, 
+		JOptionPane.showMessageDialog(null, "Os Dados do Funcionário Foram Excluidos!"
+				+ "\nDica: Atualize a lista de funcionarios para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 		janelaDadsFuncio.dispose();
 	}
