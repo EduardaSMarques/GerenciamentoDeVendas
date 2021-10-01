@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 public class JanelaEstoque implements ActionListener, ListSelectionListener {
 	
 	private static JFrame janelaEstoque = new JFrame("Gerenciamento de Vendas");
-	private static JPanel panelFuncionario = new JPanel();
+	private static JPanel panelEstoque = new JPanel();
 	private static JPanel panelCadastrar = new JPanel();
 	private static ControleDado dads;
 	private static String[] listaNomes = new String[50];
@@ -44,7 +44,7 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 	public void mostraTelaEstoq(ControleDado dad) {
 		dads = dad;
 		
-		panelFuncionario.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.RIGHT, TitledBorder.BELOW_TOP, null, new Color(0, 0, 0)));
+		panelEstoque.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.RIGHT, TitledBorder.BELOW_TOP, null, new Color(0, 0, 0)));
 		panelCadastrar.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.RIGHT, TitledBorder.BELOW_TOP, null, new Color(0, 0, 0)));
 		titulo1.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 43));
 		titulo2.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 40));
@@ -62,7 +62,7 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		listaEstoques.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		listaEstoques.setVisibleRowCount(10);
 		
-		panelFuncionario.setBounds(10, 10, 782, 325);
+		panelEstoque.setBounds(10, 10, 782, 325);
 		panelCadastrar.setBounds(10, 340, 782, 241);
 		titulo1.setBounds(289, 10, 303, 46);
 		titulo2.setBounds(208, 0, 450, 56);
@@ -82,15 +82,15 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		listaEstoques.setBounds(10, 124, 762, 141);
 		
 		janelaEstoque.setLayout(null);
-		panelFuncionario.setLayout(null);
+		panelEstoque.setLayout(null);
 		panelCadastrar.setLayout(null);
 		
-		panelFuncionario.add(titulo1);
-		panelFuncionario.add(labelPesq);
-		panelFuncionario.add(texPesq);
-		panelFuncionario.add(listaEstoques);
-		panelFuncionario.add(btnBuscar);
-		panelFuncionario.add(btnAtualizar);
+		panelEstoque.add(titulo1);
+		panelEstoque.add(labelPesq);
+		panelEstoque.add(texPesq);
+		panelEstoque.add(listaEstoques);
+		panelEstoque.add(btnBuscar);
+		panelEstoque.add(btnAtualizar);
 		
 		panelCadastrar.add(titulo2);
 		panelCadastrar.add(labelCateg);
@@ -103,7 +103,7 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		panelCadastrar.add(texPreco);
 		panelCadastrar.add(btnFinaliCadast);
 		
-		janelaEstoque.add(panelFuncionario);
+		janelaEstoque.add(panelEstoque);
 		janelaEstoque.add(panelCadastrar);
 		
 		janelaEstoque.setBounds(100, 100, 816, 628);
@@ -191,7 +191,7 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 			listaPesquisaTemporaria = new JList<String>(listaPesquisa);
 			
 			listaPesquisaTemporaria.setBounds(10, 124, 762, 141);
-			panelFuncionario.add(listaPesquisaTemporaria);
+			panelEstoque.add(listaPesquisaTemporaria);
 		} else {
 			msgErro();
 		}

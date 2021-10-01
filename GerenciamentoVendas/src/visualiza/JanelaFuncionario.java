@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 
 public class JanelaFuncionario implements ActionListener, ListSelectionListener {
 	
-	private static JFrame janelaEstoque = new JFrame("Gerenciamento de Vendas");
+	private static JFrame janelaFuncionario = new JFrame("Gerenciamento de Vendas");
 	private static JPanel panelFuncionario = new JPanel();
 	private static JPanel panelCadastrar = new JPanel();
 	private static ControleDado dads;
@@ -86,7 +86,7 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		btnFinaliCadast.setBounds(567, 191, 205, 40);
 		listaFuncionarios.setBounds(10, 124, 762, 141);
 		
-		janelaEstoque.setLayout(null);
+		janelaFuncionario.setLayout(null);
 		panelFuncionario.setLayout(null);
 		panelCadastrar.setLayout(null);
 		
@@ -110,12 +110,12 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		panelCadastrar.add(texSalario);
 		panelCadastrar.add(btnFinaliCadast);
 		
-		janelaEstoque.add(panelFuncionario);
-		janelaEstoque.add(panelCadastrar);
+		janelaFuncionario.add(panelFuncionario);
+		janelaFuncionario.add(panelCadastrar);
 		
-		janelaEstoque.setBounds(100, 100, 816, 628);
-		janelaEstoque.setLocationRelativeTo(null); 
-		janelaEstoque.setVisible(true);
+		janelaFuncionario.setBounds(100, 100, 816, 628);
+		janelaFuncionario.setLocationRelativeTo(null); 
+		janelaFuncionario.setVisible(true);
 		
 		btnBuscar.addActionListener(this);
 		btnAtualizar.addActionListener(this);

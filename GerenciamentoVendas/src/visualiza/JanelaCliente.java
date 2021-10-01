@@ -22,7 +22,7 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 	private static String[] listaNomes = new String[50];
 	private static String[] listaPesquisa = new String[20];
 	private JList<String> listaPesquisaTemporaria;
-	private JList<String> listaEstoques;
+	private JList<String> listaClientes;
 
 	private static JLabel titulo1 = new JLabel("Clientes");
 	private static JLabel titulo2 = new JLabel("Cadastrar Clientes");
@@ -64,9 +64,9 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 		btnFinaliCadast.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 17));
 		
 		listaNomes = new ControleCliente(dads).getNomeClientes();
-		listaEstoques = new JList<String>(listaNomes);
-		listaEstoques.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-		listaEstoques.setVisibleRowCount(10);
+		listaClientes = new JList<String>(listaNomes);
+		listaClientes.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+		listaClientes.setVisibleRowCount(10);
 		
 		panelCliente.setBounds(10, 10, 782, 325);
 		panelCadastrar.setBounds(10, 340, 782, 241);
@@ -89,7 +89,7 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 		btnBuscar.setBounds(482, 77, 97, 40);
 		btnAtualizar.setBounds(659, 275, 113, 40);
 		btnFinaliCadast.setBounds(567, 191, 205, 40);
-		listaEstoques.setBounds(10, 124, 762, 141);
+		listaClientes.setBounds(10, 124, 762, 141);
 		
 		janelaCliente.setLayout(null);
 		panelCliente.setLayout(null);
@@ -98,7 +98,7 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 		panelCliente.add(titulo1);
 		panelCliente.add(labelPesq);
 		panelCliente.add(texPesq);
-		panelCliente.add(listaEstoques);
+		panelCliente.add(listaClientes);
 		panelCliente.add(btnBuscar);
 		panelCliente.add(btnAtualizar);
 		
@@ -127,7 +127,7 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 		btnBuscar.addActionListener(this);
 		btnAtualizar.addActionListener(this);
 		btnFinaliCadast.addActionListener(this);
-		listaEstoques.addListSelectionListener(this);	
+		listaClientes.addListSelectionListener(this);	
 
 	}
 
@@ -139,8 +139,8 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 		}
 
 		if (src == btnAtualizar) {
-			listaEstoques.setListData(new ControleCliente(dads).getNomeClientes());			
-			listaEstoques.updateUI();
+			listaClientes.setListData(new ControleCliente(dads).getNomeClientes());			
+			listaClientes.updateUI();
 		}
 		
 		if (src == btnFinaliCadast) {
@@ -176,9 +176,9 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
 
-		if(e.getValueIsAdjusting() && src == listaEstoques) {
+		if(e.getValueIsAdjusting() && src == listaClientes) {
 			new JanelaDadosCliente().VerDadosEditar(1, dads,
-					listaEstoques.getSelectedIndex());
+					listaClientes.getSelectedIndex());
 		}
 		
 		if(src == listaPesquisaTemporaria) {
@@ -203,7 +203,7 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 		
 		if (ComparaResult == true) {
 			listaPesquisa[indice] = nomeBuscar;
-			listaEstoques.setVisible(false);
+			listaClientes.setVisible(false);
 			
 			listaPesquisaTemporaria = new JList<String>(listaPesquisa);
 			

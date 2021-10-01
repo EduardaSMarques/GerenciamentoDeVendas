@@ -101,14 +101,14 @@ public class ControleDado {
 			d.getEstoques()[d.getQtdEstoques()] = null;
 			return true;
 		} else  { // remoção do estoque pelo o meio do array
-			int cont = 0;
-			while(d.getEstoques()[cont].getNomeProd().compareTo(removeuEstoque) != 0) {
-				cont++;
+			int contador = 0;
+			while(d.getEstoques()[contador].getNomeProd().compareTo(removeuEstoque) != 0) {
+				contador++;
 			}
 			
-			for(int j = cont; j < d.getQtdEstoques() - 1; j++) {
-				d.getEstoques()[j] = null;
-				d.getEstoques()[j] = d.getEstoques()[j+1];
+			for(int num = contador; num < d.getQtdEstoques() - 1; num++) {
+				d.getEstoques()[num] = null;
+				d.getEstoques()[num] = d.getEstoques()[num+1];
 			}
 			d.getEstoques()[d.getQtdEstoques()] = null;
 			d.setQtdEstoques(d.getQtdEstoques() - 1);

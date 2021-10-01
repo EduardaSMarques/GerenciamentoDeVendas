@@ -10,7 +10,7 @@ import controle.*;
 
 public class JanelaDadosCliente implements ActionListener {
 
-	private JFrame janelaDadsEstoque = new JFrame("Dados do Cliente");
+	private JFrame janelaDadsClient = new JFrame("Dados do Cliente");
 	private JSeparator separa1 = new JSeparator();
 	private JSeparator separa2 = new JSeparator();
 	
@@ -84,29 +84,29 @@ public class JanelaDadosCliente implements ActionListener {
 		btnSalvar.setBounds(480, 471, 97, 40);
 		btnExcluir.setBounds(597, 471, 97, 40);
 
-		janelaDadsEstoque.add(titulo1);
-		janelaDadsEstoque.add(separa1);
-		janelaDadsEstoque.add(separa2);
-		janelaDadsEstoque.add(labelIdCliente);
-		janelaDadsEstoque.add(texIdCliente);
-		janelaDadsEstoque.add(labelNomClient);
-		janelaDadsEstoque.add(texNomClient);
-		janelaDadsEstoque.add(labelCpf);
-		janelaDadsEstoque.add(texCpf);
-		janelaDadsEstoque.add(labelTelefon);
-		janelaDadsEstoque.add(texTelefon);
-		janelaDadsEstoque.add(labelEmail);
-		janelaDadsEstoque.add(texEmail);
-		janelaDadsEstoque.add(labelGenero);
-		janelaDadsEstoque.add(texGenero);
-		janelaDadsEstoque.add(btnSalvar);
-		janelaDadsEstoque.add(btnExcluir);
+		janelaDadsClient.add(titulo1);
+		janelaDadsClient.add(separa1);
+		janelaDadsClient.add(separa2);
+		janelaDadsClient.add(labelIdCliente);
+		janelaDadsClient.add(texIdCliente);
+		janelaDadsClient.add(labelNomClient);
+		janelaDadsClient.add(texNomClient);
+		janelaDadsClient.add(labelCpf);
+		janelaDadsClient.add(texCpf);
+		janelaDadsClient.add(labelTelefon);
+		janelaDadsClient.add(texTelefon);
+		janelaDadsClient.add(labelEmail);
+		janelaDadsClient.add(texEmail);
+		janelaDadsClient.add(labelGenero);
+		janelaDadsClient.add(texGenero);
+		janelaDadsClient.add(btnSalvar);
+		janelaDadsClient.add(btnExcluir);
 
-		janelaDadsEstoque.setLayout(null);
+		janelaDadsClient.setLayout(null);
 
-		janelaDadsEstoque.setBounds(100, 100, 730, 561);
-		janelaDadsEstoque.setLocationRelativeTo(null); 
-		janelaDadsEstoque.setVisible(true);
+		janelaDadsClient.setBounds(100, 100, 730, 561);
+		janelaDadsClient.setLocationRelativeTo(null); 
+		janelaDadsClient.setVisible(true);
 
 		btnSalvar.addActionListener(this);
 		btnExcluir.addActionListener(this);
@@ -157,7 +157,7 @@ public class JanelaDadosCliente implements ActionListener {
 		JOptionPane.showMessageDialog(null, "Os Dados do Cliente Foram Excluidos!"
 				+ "\nDica: Atualize a lista de clientes para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
-		janelaDadsEstoque.dispose();
+		janelaDadsClient.dispose();
 	}
 	
 	public void msgExcluirClienteErro() {
@@ -170,7 +170,7 @@ public class JanelaDadosCliente implements ActionListener {
 		JOptionPane.showMessageDialog(null, "Os Dados do cliente Foram Salvos!"
 				+ "\nDica: Atualize a lista de clientes para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
-		janelaDadsEstoque.dispose();
+		janelaDadsClient.dispose();
 	}
 
 	public void msgSalvarClienteErro() {
