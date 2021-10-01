@@ -24,7 +24,7 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 	private JList<String> listaPesquisaTemporaria;
 	private JList<String> listaEstoques;
 
-	private static JLabel titulo1 = new JLabel("Estoque");
+	private static JLabel titulo1 = new JLabel("Estoques");
 	private static JLabel titulo2 = new JLabel("Cadastrar Estoque");
 	private static JLabel labelPesq = new JLabel("Pesquisar pelo nome:");
 	private static JTextField texPesq = new JTextField();
@@ -210,7 +210,7 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 	
 	public void msgCadastroEstoqueSucesso() {
 		JOptionPane.showMessageDialog(null, "Os Dados do Estoque Foram Salvos!"
-				+ "\nDica: Atualize a lista do estoque para ver as alterações.", null, 
+				+ "\nDica: Atualize a lista dos estoques para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 
@@ -218,7 +218,7 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Motivos para o erro:  \n"
 				+ "1) O campo na caixa de texto esta vazio. \n"
-				+ "2) Não foi preenchido de maneira correta em (Quantidade Fornecida e Preço da Quantidade Fornecida), "
+				+ "2) Não foi preenchido de maneira correta em (Quantidade Fornecida e/ou Preço da Quantidade Fornecida), "
 				+ "\nambos só podem conter números.", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}

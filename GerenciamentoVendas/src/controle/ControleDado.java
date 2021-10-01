@@ -34,14 +34,6 @@ public class ControleDado {
 		return this.d.getQtdFuncionarios();
 	}
 	
-	public Conta[] getContas() {
-		return this.d.getContas();
-	}
-
-	public int getQtdContas() {
-		return this.d.getQtdContas();
-	}
-	
 	public Estoque[] getEstoques() {
 		return this.d.getEstoques();
 	}

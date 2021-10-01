@@ -131,14 +131,14 @@ public class JanelaDadosCliente implements ActionListener {
 				truOrFals = dads.AdicionarEditarCliente(dadosNovos);
 
 				if(truOrFals) {
-					msgSalvarFuncionarioSucesso();
+					msgSalvarClienteSucesso();
 				}
-				else msgSalvarFuncionarioErro();
+				else msgSalvarClienteErro();
 
 			} catch (NullPointerException exc1) {
-				msgSalvarFuncionarioErro();
+				msgSalvarClienteErro();
 			} catch (NumberFormatException exc2) {
-				msgSalvarFuncionarioErro();
+				msgSalvarClienteErro();
 			}
 		}
 
@@ -147,36 +147,37 @@ public class JanelaDadosCliente implements ActionListener {
 
 			if (opcao == 1) {
 				truOrFals = dads.removerCliente(posicao); //Exclui dados do cliente
-				if (truOrFals) msgExcluirFuncionarioSucesso(); 
-				else msgExcluirFuncionarioErro(); 
+				if (truOrFals) msgExcluirClienteSucesso(); 
+				else msgExcluirClienteErro(); 
 			}			
 		}
 	}
 
-	public void msgExcluirFuncionarioSucesso() {
-		JOptionPane.showMessageDialog(null, "Os Dados do Cliente Foram Excluidos!", null, 
+	public void msgExcluirClienteSucesso() {
+		JOptionPane.showMessageDialog(null, "Os Dados do Cliente Foram Excluidos!"
+				+ "\nDica: Atualize a lista de clientes para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 		janelaDadsEstoque.dispose();
 	}
 	
-	public void msgExcluirFuncionarioErro() {
+	public void msgExcluirClienteErro() {
 		JOptionPane.showMessageDialog(null,"Erro ao excluir. "
 				+ "\nVerifique se o nome do cliente em estoque esta na lista de clientes atualizada.\n", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 
-	public void msgSalvarFuncionarioSucesso() {
+	public void msgSalvarClienteSucesso() {
 		JOptionPane.showMessageDialog(null, "Os Dados do cliente Foram Salvos!"
 				+ "\nDica: Atualize a lista de clientes para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 		janelaDadsEstoque.dispose();
 	}
 
-	public void msgSalvarFuncionarioErro() {
+	public void msgSalvarClienteErro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Motivos para o erro:  \n"
 				+ "1) O campo na caixa de texto esta vazio. \n"
-				+ "2) Não foi preenchido de maneira correta em (ID do Produto e Telefone), "
+				+ "2) Não foi preenchido de maneira correta em (ID do Cliente e/ou Telefone), "
 				+ "\nambos só podem conter números.", null, 
 				JOptionPane.ERROR_MESSAGE);
 

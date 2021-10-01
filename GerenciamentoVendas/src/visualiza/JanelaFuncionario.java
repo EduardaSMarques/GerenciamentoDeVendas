@@ -225,7 +225,7 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Motivos para o erro:  \n"
 				+ "1) O campo na caixa de texto esta vazio. \n"
-				+ "2) Não foi preenchido de maneira correta em (Telefone e Salário), ambos só podem conter números.", null, 
+				+ "2) Não foi preenchido de maneira correta em (Telefone e/ou Salário), ambos só podem conter números.", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 	

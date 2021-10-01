@@ -24,8 +24,8 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 	private JList<String> listaPesquisaTemporaria;
 	private JList<String> listaEstoques;
 
-	private static JLabel titulo1 = new JLabel("Estoque");
-	private static JLabel titulo2 = new JLabel("Cadastrar Estoque");
+	private static JLabel titulo1 = new JLabel("Clientes");
+	private static JLabel titulo2 = new JLabel("Cadastrar Clientes");
 	private static JLabel labelPesq = new JLabel("Pesquisar pelo nome:");
 	private static JTextField texPesq = new JTextField();
 	private static JLabel labelIdCliente = new JLabel("ID do Cliente:");
@@ -160,14 +160,14 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 				truOrFals = dads.AdicionarEditarCliente(cadastraDadosNovos);
 
 				if(truOrFals) {
-					msgCadastroEstoqueSucesso();
+					msgCadastroClienteSucesso();
 				}
-				else msgCadastroEstoqueErro();
+				else msgCadastroClienteErro();
 
 			} catch (NullPointerException exc1) {
-				msgCadastroEstoqueErro();
+				msgCadastroClienteErro();
 			} catch (NumberFormatException exc2) {
-				msgCadastroEstoqueErro();
+				msgCadastroClienteErro();
 			}
 		}
 
@@ -225,17 +225,17 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 	
-	public void msgCadastroEstoqueSucesso() {
-		JOptionPane.showMessageDialog(null, "Os Dados do cliente Foram Salvos!"
+	public void msgCadastroClienteSucesso() {
+		JOptionPane.showMessageDialog(null, "Os Dados do Cliente Foram Salvos!"
 				+ "\nDica: Atualize a lista de clientes para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 
-	public void msgCadastroEstoqueErro() {
+	public void msgCadastroClienteErro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Motivos para o erro:  \n"
 				+ "1) O campo na caixa de texto esta vazio. \n"
-				+ "2) Não foi preenchido de maneira correta em (ID do Produto e Telefone), "
+				+ "2) Não foi preenchido de maneira correta em (ID do Cliente e/ou Telefone), "
 				+ "\nambos só podem conter números.", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}

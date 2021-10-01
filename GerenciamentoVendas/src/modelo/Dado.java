@@ -22,8 +22,6 @@ public class Dado {
 	// private int qtdVendas = 0;
 	private Cliente[] clientes = new Cliente[20];
 	private int qtdClientes = 0;
-	private Conta[] contas = new Conta[20];
-	private int qtdContas = 0;
 
 	public void preenchendoComDadosAleatorios() {
 		for (int i = 0; i < 6; i++) {
@@ -46,8 +44,6 @@ public class Dado {
 			// "formaPaga"+i, (i+1)*10, (i+1)-10, (i+1)*50, d);
 			clientes[i] = new Cliente((i + 1) * 331122, "Cliente" + i, "numCPF" + i, (i + 1) * 300000000, "email" + i,
 					"genero" + i);
-			contas[i] = new Conta("Conta" + i, "descricao" + i, (i + 1) * 5, (i + 1) * 50.00, "dia" + i, "mês" + i,
-					"ano" + i, "status" + i);
 
 		}
 		qtdCapas = 6;
@@ -59,7 +55,6 @@ public class Dado {
 		qtdFuncionarios = 6;
 		// qtdVendas = 6;
 		qtdClientes = 6;
-		qtdContas = 6;
 
 	}
 
@@ -258,28 +253,6 @@ public class Dado {
 
 	public void setQtdClientes(int qtdClientes) {
 		this.qtdClientes = qtdClientes;
-	}
-
-	public Conta[] getContas() {
-		return contas;
-	}
-
-	public void setContas(Conta[] contas) {
-		this.contas = contas;
-	}
-
-	public void inserirEditarConta(Conta ct, int pos) {
-		this.contas[pos] = ct;
-		if (pos == qtdContas)
-			qtdContas++;
-	}
-
-	public int getQtdContas() {
-		return qtdContas;
-	}
-
-	public void setQtdContas(int qtdContas) {
-		this.qtdContas = qtdContas;
 	}
 
 }

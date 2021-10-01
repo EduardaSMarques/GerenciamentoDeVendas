@@ -111,14 +111,14 @@ public class JanelaDadosEstoque implements ActionListener {
 				truOrFals = dads.AdicionarEditarEstoque(dadosNovos);
 
 				if(truOrFals) {
-					msgSalvarFuncionarioSucesso();
+					msgSalvarEstoqueSucesso();
 				}
-				else msgSalvarFuncionarioErro();
+				else msgSalvarEstoqueErro();
 
 			} catch (NullPointerException exc1) {
-				msgSalvarFuncionarioErro();
+				msgSalvarEstoqueErro();
 			} catch (NumberFormatException exc2) {
-				msgSalvarFuncionarioErro();
+				msgSalvarEstoqueErro();
 			}
 		}
 
@@ -127,37 +127,37 @@ public class JanelaDadosEstoque implements ActionListener {
 
 			if (opcao == 1) {
 				truOrFals = dads.removerEstoque(posicao); //Exclui dados do estoque
-				if (truOrFals) msgExcluirFuncionarioSucesso(); 
-				else msgExcluirFuncionarioErro(); 
+				if (truOrFals) msgExcluirEstoqueSucesso(); 
+				else msgExcluirEstoqueErro(); 
 			}			
 		}
 	}
 
-	public void msgExcluirFuncionarioSucesso() {
+	public void msgExcluirEstoqueSucesso() {
 		JOptionPane.showMessageDialog(null, "Os Dados do Estoque Foram Excluidos!" 
-				+ "\nDica: Atualize a lista do estoque para ver as alterações.", null, 
+				+ "\nDica: Atualize a lista dos estoques para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 		janelaDadsEstoque.dispose();
 	}
 	
-	public void msgExcluirFuncionarioErro() {
+	public void msgExcluirEstoqueErro() {
 		JOptionPane.showMessageDialog(null,"Erro ao excluir. "
-				+ "\nVerifique se o nome do produto em estoque esta na lista do estoque atualizada.\n", null, 
+				+ "\nVerifique se o nome do produto em estoque esta na lista dos estoques atualizada.\n", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 
-	public void msgSalvarFuncionarioSucesso() {
+	public void msgSalvarEstoqueSucesso() {
 		JOptionPane.showMessageDialog(null, "Os Dados do Estoque Foram Salvos!"
-				+ "\nDica: Atualize a lista do estoque para ver as alterações.", null, 
+				+ "\nDica: Atualize a lista dos estoques para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 		janelaDadsEstoque.dispose();
 	}
 
-	public void msgSalvarFuncionarioErro() {
+	public void msgSalvarEstoqueErro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Motivos para o erro:  \n"
 				+ "1) O campo na caixa de texto esta vazio. \n"
-				+ "2) Não foi preenchido de maneira correta em (Quantidade Fornecida e Preço da Quantidade Fornecida), "
+				+ "2) Não foi preenchido de maneira correta em (Quantidade Fornecida e/ou Preço da Quantidade Fornecida), "
 				+ "\nambos só podem conter números.", null, 
 				JOptionPane.ERROR_MESSAGE);
 
