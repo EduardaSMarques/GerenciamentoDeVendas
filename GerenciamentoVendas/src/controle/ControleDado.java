@@ -91,7 +91,7 @@ public class ControleDado {
 	}	
 	
 	public boolean AdicionarEditarEstoque(String[] dadosEstoq) {
-		if(!dadosEstoq[3].matches("[0-9]+")) { //se o dado nao sao numeros no indice mencionado retorna false
+		if(!dadosEstoq[3].matches("[0-9]+")) { //se o dado nao sao numeros no indice mencionado, retorna false
 			return false;
 		} else {
 				Estoque e = new Estoque(dadosEstoq[1], dadosEstoq[2], Integer.parseInt(dadosEstoq[3])
@@ -102,14 +102,13 @@ public class ControleDado {
 	}
 	
 	public boolean removerEstoque(int i) {
-		int qtdMat = d.getQtdEstoques();
 		String removeuEstoque = d.getEstoques()[i].getNomeProd();
 		
 		if(i == (d.getQtdEstoques() - 1)) { // remoção do estoque pelo o final do array
 			d.setQtdEstoques(d.getQtdEstoques() - 1);
 			d.getEstoques()[d.getQtdEstoques()] = null;
 			return true;
-		} else  { // remoção do funcionario pelo o meio do array
+		} else  { // remoção do estoque pelo o meio do array
 			int cont = 0;
 			while(d.getEstoques()[cont].getNomeProd().compareTo(removeuEstoque) != 0) {
 				cont++;
@@ -126,7 +125,7 @@ public class ControleDado {
 	}
 	
 	public boolean AdicionarEditarFuncio(String[] dadosFuncionarios) {
-		if(!dadosFuncionarios[2].matches("[0-9]+")) { //se o dado nao sao numeros no indice mencionado retorna false
+		if(!dadosFuncionarios[2].matches("[0-9]+")) { //se o dado nao sao numeros no indice mencionado, retorna false
 			return false;
 		} else {
 				Funcionario f = new Funcionario(dadosFuncionarios[1], Integer.parseInt(dadosFuncionarios[2]), 
@@ -156,6 +155,40 @@ public class ControleDado {
 			}
 			d.getFuncionarios()[d.getQtdFuncionarios()] = null;
 			d.setQtdFuncionarios(d.getQtdFuncionarios() - 1);
+			return true;
+		}
+	}
+	
+	public boolean AdicionarEditarCliente(String[] dadosClientes) {
+		if(!dadosClientes[1].matches("[0-9]+") || !dadosClientes[4].matches("[0-9]+")) { 
+			return false;
+		} else {
+				Cliente c = new Cliente(Integer.parseInt(dadosClientes[1]),dadosClientes[2], dadosClientes[3],
+						Integer.parseInt(dadosClientes[4]), dadosClientes[5], dadosClientes[6]);
+				d.inserirEditarCliente(c, Integer.parseInt(dadosClientes[0])); //adicionar dados
+				return true;
+		}
+	}
+	
+	public boolean removerCliente(int i) {
+		String removeuCliente = d.getClientes()[i].getNome();
+			
+		if(i == (d.getQtdClientes() - 1)) { // remoção do cliente pelo o final do array
+			d.setQtdClientes(d.getQtdClientes() - 1);
+			d.getClientes()[d.getQtdClientes()] = null;
+			return true;
+		} else {  // remoção do cliente pelo o meio do array
+			int contador = 0;
+			while(d.getClientes()[contador].getNome().compareTo(removeuCliente) != 0) {
+				contador++;
+			}
+			
+			for(int num = contador; num < d.getQtdClientes() - 1; num++) {
+				d.getClientes()[num] = null;
+				d.getClientes()[num] = d.getClientes()[num+1];
+			}
+			d.getClientes()[d.getQtdClientes()] = null;
+			d.setQtdClientes(d.getQtdClientes() - 1);
 			return true;
 		}
 	}

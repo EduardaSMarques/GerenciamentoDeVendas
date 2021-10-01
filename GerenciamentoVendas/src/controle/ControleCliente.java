@@ -48,7 +48,7 @@ public class ControleCliente {
 		return numtel;
 	}
 	
-	public String getEndereco(int i) {		
+	public String getEmail(int i) {		
 		return cli[i].getEmail();
 	}	
 	

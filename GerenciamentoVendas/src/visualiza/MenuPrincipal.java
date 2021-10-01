@@ -79,7 +79,7 @@ public class MenuPrincipal implements ActionListener{
 		Object src = e.getSource();
 
 		if (src == btnVendas) {
-			
+			msgVendaEmManuntencao();
 		}
 		
 		if (src == btnProdutos) {
@@ -87,6 +87,7 @@ public class MenuPrincipal implements ActionListener{
 		}
 		
 		if (src == btnClientes) {
+			new JanelaCliente().mostraTelaClient(dads);
 		}
 		
 		if (src == btnFuncionarios) {
@@ -102,6 +103,13 @@ public class MenuPrincipal implements ActionListener{
 		JOptionPane.showMessageDialog(null, 
 				"                Tela produto em manutenção!\n"
 				+ "as funcionalidades ainda precisam serem efetuadas.\n", null, 
+				JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	public void msgVendaEmManuntencao() {
+		JOptionPane.showMessageDialog(null, 
+				"                Tela venda em manutenção!\n"
+				+ "as funcionalidades ainda estão sendo efetuadas.\n", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 	

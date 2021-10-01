@@ -126,7 +126,7 @@ public class JanelaDadosEstoque implements ActionListener {
 			boolean truOrFals = false;
 
 			if (opcao == 1) {
-				truOrFals = dads.removerEstoque(posicao); //Exclui dados do funcionario funcionario
+				truOrFals = dads.removerEstoque(posicao); //Exclui dados do estoque
 				if (truOrFals) msgExcluirFuncionarioSucesso(); 
 				else msgExcluirFuncionarioErro(); 
 			}			
