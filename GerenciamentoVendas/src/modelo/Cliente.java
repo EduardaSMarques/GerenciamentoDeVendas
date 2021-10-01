@@ -7,12 +7,7 @@ public class Cliente {
 	private String numCPF;
 	private int telefone;
 	private String email;
-	private String genero;
-	
-	public String toString() {
-		return  "\nID: "+ clienteID + "\nNome do Cliente: " + nome + "\nCPF: " + numCPF 
-				+ "\nTelefone: " + telefone + "\nE-mail: " + email + "\nGenero: " + genero;
-	}	
+	private String genero;	
 	
 	public Cliente(int id, String nom, String cpf, int tel, String em, String gen) {
 		clienteID = id;

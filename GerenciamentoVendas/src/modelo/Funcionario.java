@@ -8,12 +8,6 @@ public class Funcionario {
 	private String endereco;
 	private double salario;
 	
-	public String toString() {
-		return 	"\nNome do funcionário: " + nome + "\nTelefone: " + telefone
-				+ "\nE-mail: " + email + "\nEndereço: " + endereco 
-				+ "\nSalário: " + salario;
-	}
-	
 	public Funcionario(String nom, int tel, String em, String end, double sal) {
 		nome = nom;
 		telefone = tel;

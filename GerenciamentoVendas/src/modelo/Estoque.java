@@ -21,11 +21,6 @@ public class Estoque {
 		precoDaQuantFornecida = preQuantF;
 	}
 	
-	public String toString() {
-		return  "\nQuantidade Fornecida: " + quantidadeFornecida 
-				+ "\nPreço da quantidade fornecida: " + precoDaQuantFornecida;
-	}
-	
 	public Capa[] getEstoqueCapas() {
 		return estoqueCapas;
 	}
