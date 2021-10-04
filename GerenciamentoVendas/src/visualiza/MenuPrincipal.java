@@ -12,20 +12,15 @@ public class MenuPrincipal implements ActionListener{
 
 	private static JFrame janelaMenu = new JFrame("Gerenciamento de Vendas");
 	private static JLabel fundo = new JLabel("");
-	private static JButton btnVendas = new JButton("Vendas");
 	private static JButton btnProdutos = new JButton("Produtos");
 	private static JButton btnClientes = new JButton("Clientes");
 	private static JButton btnFuncionarios = new JButton("Funcionários");
-	private static JButton btneEtoque = new JButton("Estoque");
+	private static JButton btneEtoque = new JButton("Estoque e Venda");
 	public static ControleDado dads = new ControleDado();
 	
 	public MenuPrincipal() {
 		
 		fundo.setIcon(new ImageIcon(MenuPrincipal.class.getResource("/imagem/imgFundo.jpeg")));
-		
-		btnVendas.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 43));
-		btnVendas.setBackground(Color.DARK_GRAY);
-		btnVendas.setForeground(Color.WHITE);
 		
 		btnProdutos.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 43));
 		btnProdutos.setBackground(Color.DARK_GRAY);
@@ -43,16 +38,14 @@ public class MenuPrincipal implements ActionListener{
 		btneEtoque.setBackground(Color.DARK_GRAY);
 		btneEtoque.setForeground(Color.WHITE);
 		
-		btnVendas.setBounds(78, 177, 214, 99);
-		btnProdutos.setBounds(396, 177, 214, 99);
-		btnClientes.setBounds(726, 177, 214, 99);
-		btnFuncionarios.setBounds(188, 441, 302, 106);
-		btneEtoque.setBounds(582, 441, 214, 106);
+		btnProdutos.setBounds(705, 425, 214, 99);
+		btnClientes.setBounds(440, 425, 214, 99);
+		btnFuncionarios.setBounds(90, 425, 302, 99);
+		btneEtoque.setBounds(317, 160, 375, 106);
 		fundo.setBounds(0, 0, 1025, 707);
 		
 		janelaMenu.setLayout(null);
 		
-		janelaMenu.add(btnVendas);
 		janelaMenu.add(btnProdutos);
 		janelaMenu.add(btnClientes);
 		janelaMenu.add(btnFuncionarios);
@@ -68,7 +61,6 @@ public class MenuPrincipal implements ActionListener{
 	public static void main(String[] args) {
 		MenuPrincipal menuPrinc = new MenuPrincipal();
 		
-		btnVendas.addActionListener(menuPrinc);
 		btnProdutos.addActionListener(menuPrinc);
 		btnClientes.addActionListener(menuPrinc);
 		btnFuncionarios.addActionListener(menuPrinc);
@@ -78,10 +70,6 @@ public class MenuPrincipal implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 
-		if (src == btnVendas) {
-			msgVendaEmManuntencao();
-		}
-		
 		if (src == btnProdutos) {
 			msgProdutoEmManuntencao();
 		}

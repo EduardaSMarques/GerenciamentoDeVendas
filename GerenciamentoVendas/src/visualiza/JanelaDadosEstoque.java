@@ -23,6 +23,7 @@ public class JanelaDadosEstoque implements ActionListener {
 	private JTextField texQtdForn;
 	private JLabel labelPreco  = new JLabel("Preço da quantidade Fornecida:");
 	private JTextField texPreco;
+	private JButton btnVender = new JButton("Vender Produto");
 	private JButton btnSalvar = new JButton("Salvar");
 	private JButton btnExcluir = new JButton("Excluir");
 	private String[] dadosNovos = new String[9];
@@ -49,6 +50,7 @@ public class JanelaDadosEstoque implements ActionListener {
 		labelNomProd.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 20));
 		labelQtdForn.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 20));
 		labelPreco.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 20));
+		btnVender.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 17));
 		btnSalvar.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 17));
 		btnExcluir.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 17));
 		separa1.setBackground(Color.LIGHT_GRAY);
@@ -66,6 +68,7 @@ public class JanelaDadosEstoque implements ActionListener {
 		labelQtdForn.setBounds(123, 268, 238, 34);
 		texQtdForn.setBounds(123, 299, 129, 26);		
 		labelPreco.setBounds(125, 342, 317, 34);
+		btnVender.setBounds(208, 471, 252, 40);
 		texPreco.setBounds(123, 373, 131, 26);
 		btnSalvar.setBounds(480, 471, 97, 40);
 		btnExcluir.setBounds(597, 471, 97, 40);
@@ -81,6 +84,7 @@ public class JanelaDadosEstoque implements ActionListener {
 		janelaDadsEstoque.add(texQtdForn);
 		janelaDadsEstoque.add(labelPreco);
 		janelaDadsEstoque.add(texPreco);
+		janelaDadsEstoque.add(btnVender);
 		janelaDadsEstoque.add(btnSalvar);
 		janelaDadsEstoque.add(btnExcluir);
 
@@ -89,13 +93,19 @@ public class JanelaDadosEstoque implements ActionListener {
 		janelaDadsEstoque.setBounds(100, 100, 730, 561);
 		janelaDadsEstoque.setLocationRelativeTo(null); //para janela ficar centralizada na hora de abrir
 		janelaDadsEstoque.setVisible(true);
-
+		
+		btnVender.addActionListener(this);
 		btnSalvar.addActionListener(this);
 		btnExcluir.addActionListener(this);
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
+		
+		if(src == btnVender) {
+			new JanelaVenda().VerDadosEditar(2, dads, posicao);
+		}
+		
 		if(src == btnSalvar) {
 			try {
 				boolean truOrFals;
