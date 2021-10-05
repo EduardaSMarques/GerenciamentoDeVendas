@@ -135,7 +135,13 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 		Object src = e.getSource();
 		
 		if (src == btnBuscar) {
-			
+			String buscaNom = texPesq.getText();
+			boolean result = comparaNome(buscaNom);
+			if (result == true) {
+				msgAchou();
+			} else {
+				msgErro();
+			}
 		}
 
 		if (src == btnAtualizar) {
@@ -196,32 +202,13 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 		return false;
 	}
 	
-	public void testBusca() {
-		int indice = 0;
-		String nomeBuscar = texPesq.getText();
-		boolean ComparaResult = comparaNome(nomeBuscar);
-		
-		if (ComparaResult == true) {
-			listaPesquisa[indice] = nomeBuscar;
-			listaClientes.setVisible(false);
-			
-			listaPesquisaTemporaria = new JList<String>(listaPesquisa);
-			
-			listaPesquisaTemporaria.setBounds(10, 124, 762, 141);
-			panelCliente.add(listaPesquisaTemporaria);
-		} else {
-			msgErro();
-		}
-		
-	}
-	
 	public void msgErro() {
-		JOptionPane.showMessageDialog(null,"Nome não encontrado!", null, 
+		JOptionPane.showMessageDialog(null,"Este nome não está na lista!", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
 	public void msgAchou() {
-		JOptionPane.showMessageDialog(null,"encontrado!", null, 
+		JOptionPane.showMessageDialog(null,"Este nome está na lista!", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 	

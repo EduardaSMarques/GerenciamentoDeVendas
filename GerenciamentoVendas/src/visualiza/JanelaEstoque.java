@@ -34,7 +34,7 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 	private static JTextField texNomProd = new JTextField();
 	private static JLabel labelQtdForn = new JLabel("Quantidade Fornecida:");
 	private static JTextField texQtdForn = new JTextField();
-	private static JLabel labelPreco = new JLabel("Preço:");
+	private static JLabel labelPreco = new JLabel("Preço da quantidade Fornecida:");
 	private static JTextField texPreco = new JTextField();
 	private static JButton btnBuscar = new JButton("Buscar");
 	private static JButton btnAtualizar = new JButton("Atualizar");
@@ -70,7 +70,7 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		labelCateg.setBounds(10, 75, 275, 34);
 		labelNomProd.setBounds(307, 415, 275, 34);
 		labelQtdForn.setBounds(10, 143, 275, 34);
-		labelPreco.setBounds(307, 483, 275, 34);
+		labelPreco.setBounds(307, 483, 317, 34);
 		texPesq.setBounds(10, 88, 462, 26);
 		texCateg.setBounds(20, 447, 258, 26);
 		texNomProd.setBounds(306, 447, 472, 26);
@@ -121,6 +121,13 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		Object src = e.getSource();
 		
 		if (src == btnBuscar) {
+			String buscaNom = texPesq.getText();
+			boolean result = comparaNome(buscaNom);
+			if (result == true) {
+				msgAchou();
+			} else {
+				msgErro();
+			}
 		}
 
 		if (src == btnAtualizar) {
@@ -179,32 +186,13 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		return false;
 	}
 	
-	public void testBusca() {
-		int indice = 0;
-		String nomeBuscar = texPesq.getText();
-		boolean ComparaResult = comparaNome(nomeBuscar);
-		
-		if (ComparaResult == true) {
-			listaPesquisa[indice] = nomeBuscar;
-			listaEstoques.setVisible(false);
-			
-			listaPesquisaTemporaria = new JList<String>(listaPesquisa);
-			
-			listaPesquisaTemporaria.setBounds(10, 124, 762, 141);
-			panelEstoque.add(listaPesquisaTemporaria);
-		} else {
-			msgErro();
-		}
-		
-	}
-	
 	public void msgErro() {
-		JOptionPane.showMessageDialog(null,"Nome não encontrado!", null, 
+		JOptionPane.showMessageDialog(null,"Este nome não está na lista!", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
 	public void msgAchou() {
-		JOptionPane.showMessageDialog(null,"encontrado!", null, 
+		JOptionPane.showMessageDialog(null,"Este nome está na lista!", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 	
