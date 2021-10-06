@@ -67,7 +67,7 @@ class TesteControleDado {
 
 	@Test
 	void testAdicionarEditarCliente() {
-TrueDadsNovosTest[0] = Integer.toString(0); //editar os dados
+		TrueDadsNovosTest[0] = Integer.toString(0); //editar os dados
 		
 		TrueDadsNovosTest[1] = String.valueOf((200044));
 		TrueDadsNovosTest[2] = ("Cliente 1");
