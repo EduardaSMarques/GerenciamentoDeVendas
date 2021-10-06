@@ -20,8 +20,6 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 	private static JPanel panelCadastrar = new JPanel();
 	private static ControleDado dads;
 	private static String[] listaNomes = new String[50];
-	private static String[] listaPesquisa = new String[20];
-	private JList<String> listaPesquisaTemporaria;
 	private JList<String> listaEstoques;
 
 	private static JLabel titulo1 = new JLabel("Estoques");
@@ -121,13 +119,17 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		Object src = e.getSource();
 		
 		if (src == btnBuscar) {
-			String buscaNom = texPesq.getText();
-			boolean result = comparaNome(buscaNom);
-			if (result == true) {
-				msgAchou();
-			} else {
-				msgErro();
-			}
+			try {
+				String buscaNom = texPesq.getText();
+				boolean result = comparaNome(buscaNom);
+				if (result == true) {
+					int posicao = Integer.parseInt(dads.getPosicaoIndiceDoEstoque(buscaNom));
+					new JanelaDadosEstoque().VerDadosEditar(1, dads, posicao);
+				} else msgBuscaErro();
+				
+			} catch (NullPointerException exc1) {
+				msgBuscaErro();
+			} 
 		}
 
 		if (src == btnAtualizar) {
@@ -169,31 +171,23 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		if(e.getValueIsAdjusting() && src == listaEstoques) {
 			new JanelaDadosEstoque().VerDadosEditar(1, dads,
 					listaEstoques.getSelectedIndex());
-		}
-		
-		if(src == listaPesquisaTemporaria) {
-			new JanelaDadosEstoque().VerDadosEditar(1, dads,
-					listaPesquisaTemporaria.getSelectedIndex());
-		}
-		
+		}		
 	}
 	
 	public boolean comparaNome(String nome) {
-		for (String noms : listaNomes) {
-			if(nome.equals(noms) == true)
-				return true;
-		}
-		return false;
+		int posicao = Integer.parseInt(dads.getPosicaoIndiceDoEstoque(nome));
+		if(dads.getEstoques()[posicao].getNomeProd().compareTo(nome) == 0) {
+			return true;
+		} else return false;
 	}
 	
-	public void msgErro() {
-		JOptionPane.showMessageDialog(null,"Este nome não está na lista!", null, 
+	public void msgBuscaErro() {
+		JOptionPane.showMessageDialog(null,"ERRO AO BUSCAR O NOME DO PRODUTO EM ESTOQUE!\n "
+				+ "Motivos para o erro:  \n"
+				+ "1) O campo na caixa de texto está vazio. \n"
+				+ "2) O nome não esta na lista!"
+				, null, 
 				JOptionPane.ERROR_MESSAGE);
-	}
-	
-	public void msgAchou() {
-		JOptionPane.showMessageDialog(null,"Este nome está na lista!", null, 
-				JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	public void msgCadastroEstoqueSucesso() {

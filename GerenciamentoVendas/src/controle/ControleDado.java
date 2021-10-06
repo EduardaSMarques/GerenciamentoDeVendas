@@ -82,6 +82,30 @@ public class ControleDado {
 		return this.d.getQtdSuportes();
 	}	
 	
+	public String getPosicaoIndiceDoEstoque(String nome) {
+		int posicao = 0;
+		while(d.getEstoques()[posicao].getNomeProd().compareTo(nome) != 0) {
+			posicao++;
+		}
+		return String.valueOf(posicao);
+	}	
+	
+	public String getPosicaoIndiceDoFuncionario(String nome) {
+		int posicao = 0;
+		while(d.getFuncionarios()[posicao].getNome().compareTo(nome) != 0) {
+			posicao++;
+		}
+		return String.valueOf(posicao);
+	}
+	
+	public String getPosicaoIndiceDoCliente(String nome) {
+		int posicao = 0;
+		while(d.getClientes()[posicao].getNome().compareTo(nome) != 0) {
+			posicao++;
+		}
+		return String.valueOf(posicao);
+	}
+	
 	public boolean AdicionarEditarEstoque(String[] dadosEstoq) {
 		if(!dadosEstoq[3].matches("[0-9]+")) { //se o dado nao sao numeros no indice mencionado, retorna false
 			return false;

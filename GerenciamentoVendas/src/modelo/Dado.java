@@ -1,7 +1,5 @@
 package modelo;
 
-import java.util.*;
-
 public class Dado {
 
 	private Capa[] capas = new Capa[20];
@@ -18,14 +16,11 @@ public class Dado {
 	private int qtdEstoques = 0;
 	private Funcionario[] funcionarios = new Funcionario[20];
 	private int qtdFuncionarios = 0;
-	// private Venda[] vendas = new Venda[20];
-	// private int qtdVendas = 0;
 	private Cliente[] clientes = new Cliente[20];
 	private int qtdClientes = 0;
 
 	public void preenchendoComDadosAleatorios() {
 		for (int i = 0; i < 6; i++) {
-			Date d = Calendar.getInstance().getTime();
 
 			capas[i] = new Capa((i + 1) * 112233, "Capa" + i, (i + 1) * 50.00, "material" + i, "cor" + i, "textura" + i,
 					"modelo" + i, "descricao" + i, "categoria" + i);
@@ -40,8 +35,6 @@ public class Dado {
 			estoques[i] = new Estoque("Categoria" + i, "Produto" + i, (i + 1) * 20, (i + 1) * 50.00);
 			funcionarios[i] = new Funcionario("Funcionario" + i, (i + 1) * 200000000, "email" + i, "endereco" + i,
 					(i + 1) * 1000);
-			// vendas[i] = new Venda(funcionarios[i], clientes[i],new ArrayList<>(),
-			// "formaPaga"+i, (i+1)*10, (i+1)-10, (i+1)*50, d);
 			clientes[i] = new Cliente((i + 1) * 331122, "Cliente" + i, "numCPF" + i, (i + 1) * 300000000, "email" + i,
 					"genero" + i);
 
@@ -53,7 +46,6 @@ public class Dado {
 		qtdSuportes = 6;
 		qtdEstoques = 6;
 		qtdFuncionarios = 6;
-		// qtdVendas = 6;
 		qtdClientes = 6;
 
 	}
@@ -211,27 +203,6 @@ public class Dado {
 	public void setQtdFuncionarios(int qtdFuncionarios) {
 		this.qtdFuncionarios = qtdFuncionarios;
 	}
-
-	// public Venda[] getVendas() {
-	// return vendas;
-	// }
-
-	// public void setVendas(Venda[] vendas) {
-	// this.vendas = vendas;
-	// }
-
-	// public void inserirEditarVenda(Venda v, int pos) {
-	// this.vendas[pos] = v;
-	// if(pos == qtdVendas) qtdVendas++;
-	// }
-
-	// public int getQtdVendas() {
-	// return qtdVendas;
-	// }
-
-	// public void setQtdVendas(int qtdVendas) {
-	// this.qtdVendas = qtdVendas;
-	// }
 
 	public Cliente[] getClientes() {
 		return clientes;
