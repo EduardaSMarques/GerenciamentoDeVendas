@@ -61,17 +61,39 @@ class TesteControleDado {
 
 	@Test
 	void testRemoverFuncionario() {
-		fail("Not yet implemented");
+		assertTrue(d.removerFuncionario(5));
+		assertTrue(d.removerFuncionario(2));
 	}
 
 	@Test
 	void testAdicionarEditarCliente() {
-		fail("Not yet implemented");
+TrueDadsNovosTest[0] = Integer.toString(0); //editar os dados
+		
+		TrueDadsNovosTest[1] = String.valueOf((200044));
+		TrueDadsNovosTest[2] = ("Cliente 1");
+		TrueDadsNovosTest[3] = ("00499933");
+		TrueDadsNovosTest[4] = String.valueOf((91234567));
+		TrueDadsNovosTest[5] = ("email1");
+		TrueDadsNovosTest[6] = ("genero 1");
+		
+		
+		FalseDadsNovosTest[0] = Integer.toString(1); //editar os dados
+
+		FalseDadsNovosTest[1] = ("ID2");
+		FalseDadsNovosTest[2] = ("cliente2");
+		FalseDadsNovosTest[3] = ("cpf2");
+		FalseDadsNovosTest[4] = ("telefone2");
+		FalseDadsNovosTest[5] = ("email2");
+		FalseDadsNovosTest[6] = ("genero2");
+		
+		assertTrue(d.AdicionarEditarCliente(TrueDadsNovosTest));
+		assertFalse(d.AdicionarEditarCliente(FalseDadsNovosTest));
 	}
 
 	@Test
 	void testRemoverCliente() {
-		fail("Not yet implemented");
+		assertTrue(d.removerCliente(5));
+		assertTrue(d.removerCliente(2));
 	}
 
 }
