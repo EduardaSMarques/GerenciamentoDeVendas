@@ -17,10 +17,6 @@ public class Venda {
 	private Cliente client;
 	private String formaPaga;
 	private int quantProduto;
-	private Double desconto;
-	private int valorTotal;
-	private Date data;
-	static Double soma = (double) 0;
 	
 	/**
 	 * Construtor que contém informações que o cliente irá possuir	
@@ -32,14 +28,12 @@ public class Venda {
 	 * @param vt um int que contém o valor total da compra 
 	 * @param d variável que contém a data da compra 
 	 */
-	public Venda(Funcionario fun, Cliente cli, String forPaga, int quantP, Double des, int vt, Date d) {
+	public Venda(Funcionario fun, Estoque est, Cliente cli, String forPaga, int quantP, Double des, int vt, Date d) {
 		funcio = fun;
+		estoq = est;
 		client = cli;
 		formaPaga = forPaga;
 		quantProduto = quantP;
-		desconto = des;
-		valorTotal = vt;
-		data = d;
 	}
 	
 	public Funcionario getFuncio() {
@@ -80,30 +74,6 @@ public class Venda {
 
 	public void setQuantProduto(int quantProduto) {
 		this.quantProduto = quantProduto;
-	}
-
-	public Double getDesconto() {
-		return desconto;
-	}
-
-	public void setDesconto(Double desconto) {
-		this.desconto = desconto;
-	}
-
-	public int getValorTotal() {
-		return valorTotal;
-	}
-
-	public void setValorTotal(int valorTotal) {
-		this.valorTotal = valorTotal;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
 	}
 	
 }
