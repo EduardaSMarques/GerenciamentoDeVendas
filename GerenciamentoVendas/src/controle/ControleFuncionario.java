@@ -2,11 +2,22 @@ package controle;
 
 import modelo.*;
 
+/**
+*Controla os dados do Funcionario
+*@author maria Eduarda Barbosa e Maaria Eduarda Marques
+*@version 1.0 (outubro 2020)
+*/
 public class ControleFuncionario {
 
 	private Funcionario[] func;
 	private int qtdFuncionarios;
 
+	/**
+	*Construtor atribuindo para func e qtdFuncionarios dados que estão na classe ControleDado. Os dados são:
+	*[1] getFuncionarios.O método dele que está na Classe ControleDado retorna o arrey de funcionarios. 
+	*[2] getQtdFuncionarios. O método dele que está na Classe ControleDado retorna a quantidade de funcionarios que estão no array.  
+	*@param d é uma variável que contém a classe ControleDado que possui os dados que serão armazenados nos arrays dos objetos
+	*/
 	public ControleFuncionario(ControleDado d) {
 		func = d.getFuncionarios();
 		qtdFuncionarios = d.getQtdFuncionarios();

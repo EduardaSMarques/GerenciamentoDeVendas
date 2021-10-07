@@ -10,7 +10,7 @@ import controle.*;
 
 public class JanelaVenda implements ActionListener {
 
-	private JFrame janelaDadsEstoque = new JFrame("Venda");
+	private JFrame janelaDadsVenda = new JFrame("Venda");
 	private JSeparator separa1 = new JSeparator();
 	private JSeparator separa2 = new JSeparator();
 	
@@ -44,19 +44,19 @@ public class JanelaVenda implements ActionListener {
 		texQtdVendida.setBounds(252, 122, 110, 26);
 		
 		if (opcao == 2) {
-			janelaDadsEstoque.add(titulo1);
-			janelaDadsEstoque.add(separa1);
-			janelaDadsEstoque.add(labelQtdVend);
-			janelaDadsEstoque.add(texQtdVendida);
-			janelaDadsEstoque.add(separa2);
-			janelaDadsEstoque.add(btnVend);
+			janelaDadsVenda.add(titulo1);
+			janelaDadsVenda.add(separa1);
+			janelaDadsVenda.add(labelQtdVend);
+			janelaDadsVenda.add(texQtdVendida);
+			janelaDadsVenda.add(separa2);
+			janelaDadsVenda.add(btnVend);
 		}
 
-		janelaDadsEstoque.setLayout(null);
+		janelaDadsVenda.setLayout(null);
 
-		janelaDadsEstoque.setBounds(100, 100, 651, 286);
-		janelaDadsEstoque.setLocationRelativeTo(null); //para janela ficar centralizada na hora de abrir
-		janelaDadsEstoque.setVisible(true);
+		janelaDadsVenda.setBounds(100, 100, 651, 286);
+		janelaDadsVenda.setLocationRelativeTo(null); //para janela ficar centralizada na hora de abrir
+		janelaDadsVenda.setVisible(true);
 
 		btnVend.addActionListener(this);
 	}
@@ -88,7 +88,7 @@ public class JanelaVenda implements ActionListener {
 		JOptionPane.showMessageDialog(null, "                                                         Produto em Estoque Vendido!"
 				+ "\nDica: Fecha a janela (Dados do Estoque/Editar Dados) e Atualize a lista dos estoques para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
-		janelaDadsEstoque.dispose();
+		janelaDadsVenda.dispose();
 	}
 
 	public void msgVendaErro() {
