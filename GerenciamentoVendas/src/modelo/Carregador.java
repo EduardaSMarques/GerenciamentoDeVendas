@@ -12,7 +12,19 @@ public class Carregador extends Produto {
 	private String potencia;
 	private String tipoDeEntrada;
 
-	// Sobrecarga
+	/**
+	 * Construtor que contém todas as informações o carregador irá possuir
+	 * @param id um int que contém o código de identificação do carregador
+	 * @param nom uma string que contém o nome do carregador 
+	 * @param pre um double que contém o valor do carregador
+	 * @param mat uma string que contém o tipo de material do carregador
+	 * @param c uma string que contém a cor do carregador
+	 * @param pot uma string que contém a potência do carregador 
+	 * @param tipEnt uma string que contém o tipo de entrada do carregador
+	 * @param mod uma string que contém o modelo do carregador
+	 * @param des uma string que contém a descrição do carregador
+	 * @param cat uma string que contém a categoria do carregador 
+	 */
 	public Carregador(int id, String nom, Double pre, String mat, String c, String pot, String tipEnt, String mod,
 			String des, String cat) {
 		carregadorID = id;
@@ -26,7 +38,14 @@ public class Carregador extends Produto {
 		descricao = des;
 		categoria = cat;
 	}
-
+	
+	/**
+	 * Construtor resuzido que contém apenas as informações essenciais para a venda do carregador
+	 * @param id um int que contém o código de identificação do carregador
+	 * @param nom uma string que contém o nome do carregador 
+	 * @param pre um double que contém o valor do carregador
+	 * @param cat uma string que contém a categoria do carregador 
+	 */
 	public Carregador(int id, String nom, Double pre, String cat) {
 		carregadorID = id;
 		nome = nom;
@@ -34,6 +53,10 @@ public class Carregador extends Produto {
 		categoria = cat;
 	}
 	
+	/**
+	 * Método que retorna uma string com todas as informações essenciais contidas no objeto 
+	 * @return string que contém as  informações essenciais 
+	 */
 	public String toStringReduzido() {
 		return "\nID: " + carregadorID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
 				+ "\nCategoria: " + categoria;

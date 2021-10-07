@@ -11,7 +11,18 @@ public class Capa extends Produto {
 	private String cor;
 	private String textura;
 
-	// Sobrecarga
+	/**
+	 * Construtor que contém todas as informações a capa irá possuir
+	 * @param id um int que contém o código de identificação da capa
+	 * @param nom uma string que contém o nome da capa
+	 * @param pre um double que contém o valor da capa
+	 * @param mat uma string que contém o tipo de material da capa 
+	 * @param c uma string que contém a cor da capa
+	 * @param tex uma string que contém a textura da capa 
+	 * @param mod uma string que contém o modelo da capa
+	 * @param des uma string que contém a descrição da capa
+	 * @param cat uma string que contém a categoria da capa 
+	 */
 	public Capa(int id, String nom, Double pre, String mat, String c, String tex, String mod, String des, String cat) {
 		capaID = id;
 		nome = nom;
@@ -23,7 +34,14 @@ public class Capa extends Produto {
 		descricao = des;
 		categoria = cat;
 	}
-
+	
+	/**
+	 * Construtor resuzido que contém apenas as informações essenciais para a venda da capa 
+	 * @param id um int que contém o código de identificação da capa
+	 * @param nom uma string que contém o nome da capa
+	 * @param pre um double que contém o valor da capa
+	 * @param cat uma string que contém a categoria da capa
+	 */
 	public Capa(int id, String nom, Double pre, String cat) {
 		capaID = id;
 		nome = nom;
@@ -31,6 +49,10 @@ public class Capa extends Produto {
 		categoria = cat;
 	}
 	
+	/**
+	 * Método que retorna uma string com todas as informações essenciais contidas no objeto 
+	 * @return string que contém as  informações essenciais 
+	 */
 	public String toStringReduzido() {
 		return "\nID: " + capaID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
 				+ "\nCategoria: " + categoria;

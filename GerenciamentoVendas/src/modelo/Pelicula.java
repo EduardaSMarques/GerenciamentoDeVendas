@@ -10,7 +10,17 @@ public class Pelicula extends Produto {
 	private int peliculaID;
 	private String textura;
 
-	// Sobrecarga
+	/**
+	 * Construtor que contém todas as informações a pelicula irá possuir
+	 * @param id um int que contém o código de identificação da pelicula
+	 * @param nom uma string que contém o nome da pelicula 
+	 * @param pre um double que contém o valor da pelicula
+	 * @param mat uma string que contém o tipo de material da pelicula
+	 * @param tex uma string que contém a textura da pelicula
+	 * @param mod uma string que contém o modelo da pelicula
+	 * @param des uma string que contém a descrição da pelicula
+	 * @param cat uma string que contém a categoria da pelicula
+	 */
 	public Pelicula(int id, String nom, Double pre, String mat, String tex, String mod, String des, String cat) {	
 		peliculaID = id;
 		nome = nom;
@@ -22,6 +32,13 @@ public class Pelicula extends Produto {
 		categoria = cat;
 	}
 	
+	/**
+	 * Construtor resuzido que contém apenas as informações essenciais para a venda da pelicula
+	 * @param id um int que contém o código de identificação da pelicula
+	 * @param nom uma string que contém o nome da pelicula
+	 * @param pre um double que contém o valor da pelicula
+	 * @param cat uma string que contém a categoria da pelicula
+	 */
 	public Pelicula(int id, String nom, Double pre, String cat) {
 		peliculaID = id;
 		nome = nom;
@@ -29,6 +46,10 @@ public class Pelicula extends Produto {
 		categoria = cat;
 	}
 	
+	/**
+	 * Método que retorna uma string com todas as informações essenciais contidas no objeto 
+	 * @return string que contém as  informações essenciais 
+	 */
 	public String toStringReduzido() {
 		return "\nID: " + peliculaID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
 				+ "\nCategoria: " + categoria;

@@ -13,7 +13,20 @@ public class Suporte extends Produto {
 	private String tipoDoSuporte;
 	private String tamanho;
 
-	// Sobrecarga
+	/**
+	 * Construtor que contém todas as informações o suporte irá possuir
+	 * @param id um int que contém o código de identificação do suporte
+	 * @param nom uma string que contém o nome do suporte 
+	 * @param pre um double que contém o valor do suporte
+	 * @param mat uma string que contém o tipo de material do suporte
+	 * @param c uma string que contém a cor do suporte
+	 * @param tex uma string que contém a textura do suporte
+	 * @param tipSup uma string que contém o tipo de suporte
+	 * @param tam uma string que contém o tamanho de suporte
+	 * @param mod uma string que contém o modelo do suporte
+	 * @param des uma string que contém a descrição do suporte
+	 * @param cat uma string que contém a categoria do suporte
+	 */
 	public Suporte(int id, String nom, Double pre, String mat, String c, String tex, String tipSup, String tam, String mod, String des, String cat) {
 		suporteID = id;
 		nome = nom;
@@ -28,6 +41,13 @@ public class Suporte extends Produto {
 		categoria = cat;
 	}
 	
+	/**
+	 * Construtor resuzido que contém apenas as informações essenciais para a venda do suporte
+	 * @param id um int que contém o código de identificação do suporte
+	 * @param nom uma string que contém o nome do suporte
+	 * @param pre um double que contém o valor do suporte
+	 * @param cat uma string que contém a categoria do suporte
+	 */
 	public Suporte(int id, String nom, Double pre, String cat) {
 		suporteID = id;
 		nome = nom;
@@ -35,6 +55,10 @@ public class Suporte extends Produto {
 		categoria = cat;
 	}
 	
+	/**
+	 * Método que retorna uma string com todas as informações essenciais contidas no objeto 
+	 * @return string que contém as  informações essenciais 
+	 */
 	public String toStringReduzido() {
 		return "\nID: " + suporteID + "\nNome da Capa: " + nome + "\nPreço: " + preco 
 				+ "\nCategoria: " + categoria;

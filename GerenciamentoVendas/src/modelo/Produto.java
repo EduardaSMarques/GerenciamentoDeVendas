@@ -1,7 +1,7 @@
 package modelo;
 
 /**
- * Classe que contém as informações que todos os produtos tem
+ * Classe que contém as informações que todos os produtos possui em comum 
  * @author Maria Eduarda Barbosa e Maria Eduarda Marques
  * @version 1.0 (outubro 2021)
  */

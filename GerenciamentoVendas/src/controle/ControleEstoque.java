@@ -4,7 +4,7 @@ import modelo.*;
 
 /**
 *Controla os dados do Estoque
-*@author maria Eduarda Barbosa e Maaria Eduarda Marques
+*@author Maria Eduarda Barbosa e Maria Eduarda Marques
 *@return 1.0 (outubro 2020)
 */
 public class ControleEstoque {
