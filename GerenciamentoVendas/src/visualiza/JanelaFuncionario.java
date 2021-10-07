@@ -1,10 +1,5 @@
 package visualiza;
 
-/**
- * Janela do Funcionario para cadastrar, visualizar e buscar funcionarios
- * @author Maria Eduarda Barbosa e Maria Eduarda Marques
- * @version 1.0 (outubro 2021)
- */
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
@@ -18,6 +13,11 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Janela do Funcionario para cadastrar, visualizar e buscar funcionarios
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class JanelaFuncionario implements ActionListener, ListSelectionListener {
 	
 	private static JFrame janelaFuncionario = new JFrame("Gerenciamento de Vendas");
@@ -47,10 +47,10 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 	private String[] cadastraDadosNovos = new String[9];
 	
 	/**
-	 * Método que cria paineis, botões e barra de pesquisa, sendo eles:
-	 * [1]paineis de cadastro e de visuliazações de cadastro de funcionarios
-	 * [2]botões de buscar cadastrados, de cadastrar funcionario e de atualizar lista com funcionarios cadastrados
-	 * [3]barra de pesquisa para procurar se o funcionario consta cadastrado
+	 * Método que preenche com dados as caixas de textos do funcionário selecionado na lista, também estiliza e adiciona os botões as caixas de textos e as labels na janela, sendo eles:
+	 * [1]botões de buscar cadastrados, de cadastrar e de atualizar lista de funcionários cadastrados
+	 * [2]caixas de textos para digitar informações
+	 * [3]labels informando o que digitar nas caixas de textos
 	 * @param dad variável que contém a classe de ControleDado onde está armazenado os dados das classes
 	 */
 	public void mostraTelaFuncio(ControleDado dad) {

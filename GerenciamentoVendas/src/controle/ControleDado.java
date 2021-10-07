@@ -90,6 +90,11 @@ public class ControleDado {
 		return this.d.getQtdSuportes();
 	}	
 	
+	/**
+	 * Método que irá retornar a posição do nome que está no array de Estoque  
+	 * @param nome é uma string que contém o nome do produto em estoque 
+	 * @return retorna o número inteiro em forma de String da posição no array do nome inserido no parâmetro 
+	 */
 	public String getPosicaoIndiceDoEstoque(String nome) {
 		int posicao = 0;
 		while(d.getEstoques()[posicao].getNomeProd().compareTo(nome) != 0) {
@@ -98,6 +103,11 @@ public class ControleDado {
 		return String.valueOf(posicao);
 	}	
 	
+	/**
+	 * Método que irá retornar a posição do nome que está no array de Funcionario   
+	 * @param nome é uma string que contém o nome do funcionário  
+	 * @return retorna o número inteiro em forma de String da posição no array do nome inserido no parâmetro
+	 */	
 	public String getPosicaoIndiceDoFuncionario(String nome) {
 		int posicao = 0;
 		while(d.getFuncionarios()[posicao].getNome().compareTo(nome) != 0) {
@@ -106,6 +116,11 @@ public class ControleDado {
 		return String.valueOf(posicao);
 	}
 	
+	/**
+	 * Método que irá retornar a posição do nome que está no array de Cliente    
+	 * @param nome é uma string que contém o nome do cliente 
+	 * @return retorna o número inteiro em forma de String da posição no array do nome inserido no parâmetro 
+	 */
 	public String getPosicaoIndiceDoCliente(String nome) {
 		int posicao = 0;
 		while(d.getClientes()[posicao].getNome().compareTo(nome) != 0) {

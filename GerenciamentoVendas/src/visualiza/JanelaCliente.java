@@ -49,10 +49,10 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 	private String[] cadastraDadosNovos = new String[9];
 	
 	/**
-	 * Método que cria paineis, botões e barra de pesquisa, sendo eles:
-	 * [1]paineis de cadastro e de visuliazações de cadastro de clientes
-	 * [2]botões de buscar cadastrados, de cadastrar cliente e de atualizar lista com clientes cadastrados
-	 * [3]barra de pesquisa para procurar se o cliente consta cadastrado
+	 * Método que preenche com dados as caixas de textos do cliente selecionado na lista, também estiliza e adiciona os botões as caixas de textos e as labels na janela, sendo eles:
+	 * [1]botões de buscar cadastrados, de cadastrar e de atualizar lista de clientes cadastrados
+	 * [2]caixas de textos para digitar informações
+	 * [3]labels informando o que digitar nas caixas de textos
 	 * @param dad variável que contém a classe de ControleDado onde está armazenado os dados das classes
 	 */
 	public void mostraTelaClient(ControleDado dad) {

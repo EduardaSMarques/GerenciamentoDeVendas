@@ -8,6 +8,11 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import controle.*;
 
+/**
+ * Janela de vendas para vender o produto selecionado
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class JanelaVenda implements ActionListener {
 
 	private JFrame janelaDadsVenda = new JFrame("Venda");
@@ -22,6 +27,15 @@ public class JanelaVenda implements ActionListener {
 	private int posicao;
 	private int opcao;
 
+	/**
+	 * Método que estiliza e adiciona o botão a caixa de texto e a label na janela, sendo eles:
+	 * [1]botão de vender
+	 * [2]caixa de texto para digitar a quantidade vendida
+	 * [3]label informando o que digitar na caixa de texto
+	 * @param op variável que contém um número inteiro indicando a opção escolhida
+	 * @param dad variável que contém a classe de ControleDado onde está armazenado os dados das classes
+	 * @param pos variável que contém um número inteiro com a posição do dado no array da classe JanelaEstoque
+	 */
 	public void VerDadosEditar(int op, ControleDado d, int pos) {
 
 		opcao = op;
@@ -61,6 +75,10 @@ public class JanelaVenda implements ActionListener {
 		btnVend.addActionListener(this);
 	}
 
+	/**
+	 * Método que implementa os comandos que os botões devem seguir
+	 * @param e uma variável que contém o ActionEvent e identifica o evento que ocorreu
+	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
@@ -84,6 +102,9 @@ public class JanelaVenda implements ActionListener {
 		} 
 	}
 
+	/**
+	 * Método que mostra uma mensagem de sucesso ao vender o produto em estoque
+	 */
 	public void msgVendaSucesso() {
 		JOptionPane.showMessageDialog(null, "                                                         Produto em Estoque Vendido!"
 				+ "\nDica: Fecha a janela (Dados do Estoque/Editar Dados) e Atualize a lista dos estoques para ver as alterações.", null, 
@@ -91,6 +112,9 @@ public class JanelaVenda implements ActionListener {
 		janelaDadsVenda.dispose();
 	}
 
+	/**
+	 * Método que mostra uma mensagem quando dar erro ao vender o produto em estoque
+	 */
 	public void msgVendaErro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO VENDER O PRODUTO!\n "
 				+ "Motivo para o erro:  \n"
@@ -99,6 +123,9 @@ public class JanelaVenda implements ActionListener {
 
 	}
 
+	/**
+	 * Método que mostra uma mensagem quando dar erro ao vender o produto em estoque
+	 */
 	public void msgVendaErroSemEstoq() {
 		JOptionPane.showMessageDialog(null,"ERRO AO VENDER O PRODUTO!\n "
 				+ "Motivo para o erro:  \n"

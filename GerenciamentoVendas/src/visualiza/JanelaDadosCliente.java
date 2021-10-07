@@ -8,6 +8,11 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import controle.*;
 
+/**
+ * Janela dos dados do Cliente para salvar e excluir
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class JanelaDadosCliente implements ActionListener {
 
 	private JFrame janelaDadsClient = new JFrame("Dados do Cliente");
@@ -34,6 +39,15 @@ public class JanelaDadosCliente implements ActionListener {
 	private int posicao;
 	private int opcao;
 
+	/**
+	 * Método que preenche com dados as caixas de textos do cliente selecionado na lista, também estiliza e adiciona os botões as caixas de textos e as labels na janela, sendo eles:
+	 * [1]botões de salvar e excluir
+	 * [2]caixas de textos para digitar informações
+	 * [3]labels informando o que digitar nas caixas de textos
+	 * @param op variável que contém um número inteiro indicando a opção escolhida
+	 * @param dad variável que contém a classe de ControleDado onde está armazenado os dados das classes
+	 * @param pos variável que contém um número inteiro sendo ele a posição do dado no array da classe JanelaCliente
+	 */
 	public void VerDadosEditar(int op, ControleDado d, int pos) {
 
 		opcao = op;
@@ -112,6 +126,10 @@ public class JanelaDadosCliente implements ActionListener {
 		btnExcluir.addActionListener(this);
 	}
 
+	/**
+	 * Método que implementa os comandos que os botões devem seguir
+	 * @param e uma variável que contém o ActionEvent e identifica o evento que ocorreu
+	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		if(src == btnSalvar) {
@@ -153,6 +171,9 @@ public class JanelaDadosCliente implements ActionListener {
 		}
 	}
 
+	/**
+	 * Método que mostra uma mensagem de sucesso ao excluir os dados de cliente
+	 */
 	public void msgExcluirClienteSucesso() {
 		JOptionPane.showMessageDialog(null, "Os Dados do Cliente Foram Excluidos!"
 				+ "\nDica: Atualize a lista de clientes para ver as alterações.", null, 
@@ -160,12 +181,18 @@ public class JanelaDadosCliente implements ActionListener {
 		janelaDadsClient.dispose();
 	}
 	
+	/**
+	 * Método que mostra uma mensagem quando dar erro ao excluir os dados do cliente
+	 */
 	public void msgExcluirClienteErro() {
 		JOptionPane.showMessageDialog(null,"Erro ao excluir. "
 				+ "\nVerifique se o nome do cliente em estoque esta na lista de clientes atualizada.\n", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 
+	/**
+	 * Método que mostra uma mensagem de sucesso ao salvar a edição dos dados do cliente
+	 */
 	public void msgSalvarClienteSucesso() {
 		JOptionPane.showMessageDialog(null, "Os Dados do cliente Foram Salvos!"
 				+ "\nDica: Atualize a lista de clientes para ver as alterações.", null, 
@@ -173,6 +200,9 @@ public class JanelaDadosCliente implements ActionListener {
 		janelaDadsClient.dispose();
 	}
 
+	/**
+	 * Método que mostra uma mensagem quando dar erro ao salvar os dados de cliente
+	 */
 	public void msgSalvarClienteErro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Motivos para o erro:  \n"

@@ -8,6 +8,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.*;
 
+/**
+ * Janela do Menu Principal para dar início ao software com os botões que abrem as outras janelas com funcões 
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class MenuPrincipal implements ActionListener{
 
 	private static JFrame janelaMenu = new JFrame("Gerenciamento de Vendas");
@@ -18,6 +23,11 @@ public class MenuPrincipal implements ActionListener{
 	private static JButton btneEtoque = new JButton("Estoque e Venda");
 	public static ControleDado dads = new ControleDado();
 	
+	/**
+	 * Construtor que estiliza e adiciona os botões e a label na janela, sendo eles:
+	 * [1]botões de produtos, clientes, funcionarios e estoque e venda
+	 * [2]label com a imagem de fundo
+	 */
 	public MenuPrincipal() {
 		
 		fundo.setIcon(new ImageIcon(MenuPrincipal.class.getResource("/imagem/imgFundo.jpeg")));
@@ -58,6 +68,10 @@ public class MenuPrincipal implements ActionListener{
 		janelaMenu.setVisible(true);
 	}
 	
+	/**
+	 * Método main onde chamará os botões assim que iniciar o software
+	 * @param args uma coleção de Strings, em que o software aceita quando o executa.
+	 */
 	public static void main(String[] args) {
 		MenuPrincipal menuPrinc = new MenuPrincipal();
 		
@@ -67,6 +81,10 @@ public class MenuPrincipal implements ActionListener{
 		btneEtoque.addActionListener(menuPrinc);
 	}
 	
+	/**
+	 * Método que implementa os comandos que os botões devem seguir
+	 * @param e uma variável que contém o ActionEvent e identifica o evento que ocorreu
+	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 
@@ -87,17 +105,13 @@ public class MenuPrincipal implements ActionListener{
 		}
 	}
 
+	/**
+	 * Método que mostra uma mensagem de informação quando o botão produtos for selecionado
+	 */
 	public void msgProdutoEmManuntencao() {
 		JOptionPane.showMessageDialog(null, 
 				"                Tela produto em manutenção!\n"
 				+ "as funcionalidades ainda precisam serem efetuadas.\n", null, 
-				JOptionPane.INFORMATION_MESSAGE);
-	}
-	
-	public void msgVendaEmManuntencao() {
-		JOptionPane.showMessageDialog(null, 
-				"                Tela venda em manutenção!\n"
-				+ "as funcionalidades ainda estão sendo efetuadas.\n", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 	

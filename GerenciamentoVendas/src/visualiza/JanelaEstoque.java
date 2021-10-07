@@ -45,10 +45,10 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 	private String[] cadastraDadosNovos = new String[9];
 	
 	/**
-	 * Método que cria paineis, botões e barra de pesquisa, sendo eles:
-	 * [1]paineis de cadastro e de visuliazações de cadastro de produtos no estoque
-	 * [2]botões de buscar cadastrados, de cadastrar e e de atualizar lista de produtos cadastrados
-	 * [3]barra de pesquisa para procurar se o produto consta cadastrado no estoque
+	 * Método que preenche com dados as caixas de textos do estoque selecionado na lista, também estiliza e adiciona os botões as caixas de textos e as labels na janela, sendo eles:
+	 * [1]botões de buscar cadastrados, de cadastrar e de atualizar lista de produtos cadastrados
+	 * [2]caixas de textos para digitar informações
+	 * [3]labels informando o que digitar nas caixas de textos
 	 * @param dad variável que contém a classe de ControleDado onde está armazenado os dados das classes
 	 */
 	public void mostraTelaEstoq(ControleDado dad) {

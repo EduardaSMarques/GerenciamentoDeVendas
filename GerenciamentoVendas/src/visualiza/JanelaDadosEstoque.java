@@ -8,6 +8,11 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import controle.*;
 
+/**
+ * Janela dos dados do Estoque para salvar e excluir
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class JanelaDadosEstoque implements ActionListener {
 
 	private JFrame janelaDadsEstoque = new JFrame("Dados do Estoque");
@@ -31,6 +36,15 @@ public class JanelaDadosEstoque implements ActionListener {
 	private int posicao;
 	private int opcao;
 
+	/**
+	 * Método que preenche com dados as caixas de textos do estoque selecionado na lista, também estiliza e adiciona os botões as caixas de textos e as labels na janela, sendo eles:
+	 * [1]botões de salvar e excluir
+	 * [2]caixas de textos para digitar informações
+	 * [3]labels informando o que digitar nas caixas de textos
+	 * @param op variável que contém um número inteiro indicando a opção escolhida
+	 * @param dad variável que contém a classe de ControleDado onde está armazenado os dados das classes
+	 * @param pos variável que contém um número inteiro sendo ele a posição do dado no array da classe JanelaEstoque
+	 */
 	public void VerDadosEditar(int op, ControleDado d, int pos) {
 
 		opcao = op;
@@ -99,6 +113,10 @@ public class JanelaDadosEstoque implements ActionListener {
 		btnExcluir.addActionListener(this);
 	}
 
+	/**
+	 * Método que implementa os comandos que os botões devem seguir
+	 * @param e uma variável que contém o ActionEvent e identifica o evento que ocorreu
+	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
@@ -143,6 +161,9 @@ public class JanelaDadosEstoque implements ActionListener {
 		}
 	}
 
+	/**
+	 * Método que mostra uma mensagem de sucesso ao excluir os dados do produto em estoque
+	 */
 	public void msgExcluirEstoqueSucesso() {
 		JOptionPane.showMessageDialog(null, "Os Dados do Estoque Foram Excluidos!" 
 				+ "\nDica: Atualize a lista dos estoques para ver as alterações.", null, 
@@ -150,12 +171,18 @@ public class JanelaDadosEstoque implements ActionListener {
 		janelaDadsEstoque.dispose();
 	}
 	
+	/**
+	 * Método que mostra uma mensagem quando dar erro ao excluir os dados do produto em estoque
+	 */
 	public void msgExcluirEstoqueErro() {
 		JOptionPane.showMessageDialog(null,"Erro ao excluir. "
 				+ "\nVerifique se o nome do produto em estoque esta na lista dos estoques atualizada.\n", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 
+	/**
+	 * Método que mostra uma mensagem de sucesso ao salvar a edição dos dados do produto em estoque
+	 */
 	public void msgSalvarEstoqueSucesso() {
 		JOptionPane.showMessageDialog(null, "Os Dados do Estoque Foram Salvos!"
 				+ "\nDica: Atualize a lista dos estoques para ver as alterações.", null, 
@@ -163,6 +190,9 @@ public class JanelaDadosEstoque implements ActionListener {
 		janelaDadsEstoque.dispose();
 	}
 
+	/**
+	 * Método que mostra uma mensagem quando dar erro ao salvar a edição dos dados do produto em estoque
+	 */
 	public void msgSalvarEstoqueErro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Motivos para o erro:  \n"
