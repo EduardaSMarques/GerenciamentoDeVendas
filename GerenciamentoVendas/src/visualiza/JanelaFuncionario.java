@@ -1,5 +1,10 @@
 package visualiza;
 
+/**
+ * Janela do Funcionario para cadastrar, visualizar e buscar funcionarios
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
@@ -41,6 +46,13 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 	private static JButton btnFinaliCadast = new JButton("Cadastrar");
 	private String[] cadastraDadosNovos = new String[9];
 	
+	/**
+	 * Método que cria paineis, botões e barra de pesquisa, sendo eles:
+	 * [1]paineis de cadastro e de visuliazações de cadastro de funcionarios
+	 * [2]botões de buscar cadastrados, de cadastrar funcionario e de atualizar lista com funcionarios cadastrados
+	 * [3]barra de pesquisa para procurar se o funcionario consta cadastrado
+	 * @param dad variável que contém a classe de ControleDado onde está armazenado os dados das classes
+	 */
 	public void mostraTelaFuncio(ControleDado dad) {
 		dads = dad;
 		
@@ -121,7 +133,11 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		listaFuncionarios.addListSelectionListener(this);
 
 	}
-
+	
+	/**
+	 * Método que implementa os comandos que os botões devem seguir
+	 * @param e uma variável que contém o ActionEvent e identifica o evento que ocorreu
+	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
@@ -173,7 +189,11 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		}
 
 	}
-
+	
+	/**
+	 * Método que implementa a função de selecionar um funcionario da lista
+	 * @param e uma variável que contém o ActionEvent e identifica o evento que ocorreu
+	 */
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
 
@@ -183,6 +203,13 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		}		
 	}
 	
+	/**
+	 *  Método que compara o nome na posição com o nome escolhido pelo usuário e verifica se o funcionario existe no sistema
+	 * @param nome uma string que contém o nome a ser comparado
+	 * @return true ou false se:
+	 * [1]True se o nome do funcionario existe 
+	 * [2]False se o nome do funcionario não existe
+	 */
 	public boolean comparaNome(String nome) {
 		int posicao = Integer.parseInt(dads.getPosicaoIndiceDoFuncionario(nome));
 		if(dads.getFuncionarios()[posicao].getNome().compareTo(nome) == 0) {
@@ -190,6 +217,9 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 		} else return false;
 	}
 	
+	/**
+	 * Método que mostra uma mensagem quando dar erro ao buscar o nome do funcionario
+	 */
 	public void msgBuscaErro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO BUSCAR O NOME DO FUNCIONÁRIO!\n "
 				+ "Motivos para o erro:  \n"
@@ -199,12 +229,18 @@ public class JanelaFuncionario implements ActionListener, ListSelectionListener 
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
+	/**
+	 * Método que mostra uma mensagem de sucesso ao salvar os dados do funcionario
+	 */
 	public void msgCadastroFuncionarioSucesso() {
 		JOptionPane.showMessageDialog(null, "Os Dados do Funcionário Foram Salvos!"
 				+ "\nDica: Atualize a lista dos funcionários para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 	}
-
+	
+	/**
+	 * Método que mostra uma mensagem quando dar erro ao salvar os dados do funcionario
+	 */
 	public void msgCadastroFuncionarioErro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Motivos para o erro:  \n"

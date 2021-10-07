@@ -1,5 +1,10 @@
 package modelo;
 
+/**
+ * Classe que contém as informações do fone
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class Fone extends Produto {
 
 	private int foneID;

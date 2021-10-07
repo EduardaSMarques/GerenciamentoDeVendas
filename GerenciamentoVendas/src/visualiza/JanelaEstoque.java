@@ -13,6 +13,11 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Janela do Estoque para cadastrar, visualizar e buscar produtos no estoque 
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class JanelaEstoque implements ActionListener, ListSelectionListener {
 	
 	private static JFrame janelaEstoque = new JFrame("Gerenciamento de Vendas");
@@ -39,6 +44,13 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 	private static JButton btnFinaliCadast = new JButton("Cadastrar");
 	private String[] cadastraDadosNovos = new String[9];
 	
+	/**
+	 * Método que cria paineis, botões e barra de pesquisa, sendo eles:
+	 * [1]paineis de cadastro e de visuliazações de cadastro de produtos no estoque
+	 * [2]botões de buscar cadastrados, de cadastrar e e de atualizar lista de produtos cadastrados
+	 * [3]barra de pesquisa para procurar se o produto consta cadastrado no estoque
+	 * @param dad variável que contém a classe de ControleDado onde está armazenado os dados das classes
+	 */
 	public void mostraTelaEstoq(ControleDado dad) {
 		dads = dad;
 		
@@ -114,7 +126,11 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		listaEstoques.addListSelectionListener(this);	
 
 	}
-
+	
+	/**
+	 * Método que implementa os comandos que os botões devem seguir
+	 * @param e uma variável que contém o ActionEvent e identifica o evento que ocorreu
+	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
@@ -164,7 +180,11 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		}
 
 	}
-
+	
+	/**
+	 * Método que implementa a função de selecionar um produto da lista
+	 * @param e uma variável que contém o ActionEvent e identifica o evento que ocorreu
+	 */
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
 
@@ -174,6 +194,13 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		}		
 	}
 	
+	/**
+	 *  Método que compara o nome na posição com o nome escolhido pelo usuário e verifica se o produto existe no sistema
+	 * @param nome uma string que contém o nome a ser comparado
+	 * @return true ou false se:
+	 * [1]True se o nome do produto existe 
+	 * [2]False se o nome do produto não existe
+	 */
 	public boolean comparaNome(String nome) {
 		int posicao = Integer.parseInt(dads.getPosicaoIndiceDoEstoque(nome));
 		if(dads.getEstoques()[posicao].getNomeProd().compareTo(nome) == 0) {
@@ -181,6 +208,9 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 		} else return false;
 	}
 	
+	/**
+	 * Método que mostra uma mensagem quando dar erro ao buscar o nome do produto no estoque
+	 */
 	public void msgBuscaErro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO BUSCAR O NOME DO PRODUTO EM ESTOQUE!\n "
 				+ "Motivos para o erro:  \n"
@@ -190,12 +220,18 @@ public class JanelaEstoque implements ActionListener, ListSelectionListener {
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
+	/**
+	 * Método que mostra uma mensagem de sucesso ao salvar os dados no estoque
+	 */
 	public void msgCadastroEstoqueSucesso() {
 		JOptionPane.showMessageDialog(null, "Os Dados do Estoque Foram Salvos!"
 				+ "\nDica: Atualize a lista dos estoques para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 	}
-
+	
+	/**
+	 * Método que mostra uma mensagem quando dar erro ao salvar os dados no estoque
+	 */
 	public void msgCadastroEstoqueErro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Motivos para o erro:  \n"

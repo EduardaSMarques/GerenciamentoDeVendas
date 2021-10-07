@@ -2,11 +2,22 @@ package controle;
 
 import modelo.*;
 
+/**
+ * Controla os dados da classe cliente para se obter informações específicas 
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class ControleCliente {
 	
 	private Cliente[] cli;
 	private int qtdClientes;
-
+	
+	/**
+	 * Construtor que possui referência de dois objetos que estão na classe ControleDado. Os objetos são:
+	 * [1]getClientes. O método dele que está na Classe ControleDado, retorna o array de clientes.
+	 * [2]getQtdClientes. O método dele que está na Classe ControleDado, retorna a quantidade de clientes que estão no array
+	 * @param d é uma variável que contém a classe ControleDado que possui os dados que serão armazenados nos arrays dos objetos 
+	 */
 	public ControleCliente(ControleDado d) {
 		this.cli = d.getClientes();
 		this.qtdClientes = d.getQtdClientes();

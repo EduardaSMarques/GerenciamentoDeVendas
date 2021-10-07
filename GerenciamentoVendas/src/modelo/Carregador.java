@@ -1,5 +1,10 @@
 package modelo;
 
+/**
+ * Classe que contém as informações do carregador
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class Carregador extends Produto {
 
 	private int carregadorID;

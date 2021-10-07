@@ -13,6 +13,11 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Janela do Cliente para cadastrar, visualizar e buscar clientes
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class JanelaCliente implements ActionListener, ListSelectionListener {
 	
 	private static JFrame janelaCliente = new JFrame("Gerenciamento de Vendas");
@@ -43,6 +48,13 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 	private static JButton btnFinaliCadast = new JButton("Cadastrar");
 	private String[] cadastraDadosNovos = new String[9];
 	
+	/**
+	 * Método que cria paineis, botões e barra de pesquisa, sendo eles:
+	 * [1]paineis de cadastro e de visuliazações de cadastro de clientes
+	 * [2]botões de buscar cadastrados, de cadastrar cliente e de atualizar lista com clientes cadastrados
+	 * [3]barra de pesquisa para procurar se o cliente consta cadastrado
+	 * @param dad variável que contém a classe de ControleDado onde está armazenado os dados das classes
+	 */
 	public void mostraTelaClient(ControleDado dad) {
 		dads = dad;
 		
@@ -128,7 +140,11 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 		listaClientes.addListSelectionListener(this);	
 
 	}
-
+	
+	/**
+	 * Método que implementa os comandos que os botões devem seguir
+	 * @param e uma variável que contém o ActionEvent e identifica o evento que ocorreu
+	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
@@ -179,7 +195,11 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 			}
 		}
 	}
-
+	
+	/**
+	 * Método que implementa a função de selecionar um cliente da lista
+	 * @param e uma variável que contém o ActionEvent e identifica o evento que ocorreu
+	 */
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
 
@@ -189,6 +209,13 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 		}
 	}
 	
+	/**
+	 *  Método que compara o nome na posição com o nome escolhido pelo usuário e verifica se o cliente existe no sistema
+	 * @param nome uma string que contém o nome a ser comparado
+	 * @return true ou false se:
+	 * [1]True se o nome do cliente existe 
+	 * [2]False se o nome do cliente não existe
+	 */
 	public boolean comparaNome(String nome) {
 		int posicao = Integer.parseInt(dads.getPosicaoIndiceDoCliente(nome));
 		if(dads.getClientes()[posicao].getNome().compareTo(nome) == 0) {
@@ -196,6 +223,9 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 		} else return false;
 	}
 	
+	/**
+	 * Método que mostra uma mensagem quando dar erro ao buscar o nome do cliente
+	 */
 	public void msgBuscaErro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO BUSCAR O NOME DO CLIENTE!\n "
 				+ "Motivos para o erro:  \n"
@@ -205,12 +235,18 @@ public class JanelaCliente implements ActionListener, ListSelectionListener {
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
+	/**
+	 * Método que mostra uma mensagem de sucesso ao salvar os dados de cliente
+	 */
 	public void msgCadastroClienteSucesso() {
 		JOptionPane.showMessageDialog(null, "Os Dados do Cliente Foram Salvos!"
 				+ "\nDica: Atualize a lista de clientes para ver as alterações.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 	}
-
+	
+	/**
+	 * Método que mostra uma mensagem quando dar erro ao salvar os dados de cliente
+	 */
 	public void msgCadastroClienteErro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Motivos para o erro:  \n"

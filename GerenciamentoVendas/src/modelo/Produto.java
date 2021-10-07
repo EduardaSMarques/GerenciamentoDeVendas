@@ -1,5 +1,10 @@
 package modelo;
 
+/**
+ * Classe que contém as informações que todos os produtos tem
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public abstract class Produto {
 	
 	protected String nome;

@@ -2,10 +2,18 @@ package controle;
 
 import modelo.*;
 
+/**
+ * Controla os dados para se fazer os cruds das classes cliente, estoque e funcionário
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class ControleDado {
 
 	private Dado d = new Dado();
-
+	
+	/**
+	 * Construtor que armazena os dados aleatórios da classe Dado para se utilizar nos cruds
+	 */
 	public ControleDado() {
 		d.preenchendoComDadosAleatorios();
 	}
@@ -105,7 +113,13 @@ public class ControleDado {
 		}
 		return String.valueOf(posicao);
 	}
-	
+	/**
+	 * Método que irá adicionar e editar dados do estoque
+	 * @param dadosEstoq uma string que contém uma posição de onde o dado armazenado tem que ser um número 
+	 * @return false ou true se:
+	 * [1] retorna false se o dado na posição não for um número
+	 * [2] retorna true se o dado na posição for número e então adiciona ou edita dados no estoque
+	 */	
 	public boolean AdicionarEditarEstoque(String[] dadosEstoq) {
 		if(!dadosEstoq[3].matches("[0-9]+")) { //se o dado nao sao numeros no indice mencionado, retorna false
 			return false;
@@ -117,6 +131,13 @@ public class ControleDado {
 		}
 	}
 	
+	/**
+	 * Método que remove o produto no estoque do software
+	 * @param i variável que indica a posição do produto no estoque
+	 * @return true se:
+	 * [1]Se a remoção do estoque for no final ou no meio
+	 * [2]Para retirar o null da posição onde o produto foi retirado
+	 */	
 	public boolean removerEstoque(int i) {
 		String removeuEstoque = d.getEstoques()[i].getNomeProd();
 		
@@ -140,6 +161,13 @@ public class ControleDado {
 		}
 	}
 	
+	/**
+	 * Método que irá adicionar e editar dados do funcionario
+	 * @param dadosFuncionarios uma string que contém uma posição de onde o dado armazenado tem que ser um número 
+	 * @return false ou true se:
+	 * [1] retorna false se o dado na posição não for um número
+	 * [2] retorna true se o dado na posição for número e então adiciona ou edita dados no funcionario
+	 */	
 	public boolean AdicionarEditarFuncio(String[] dadosFuncionarios) {
 		if(!dadosFuncionarios[2].matches("[0-9]+")) { //se o dado nao sao numeros no indice mencionado, retorna false
 			return false;
@@ -151,7 +179,13 @@ public class ControleDado {
 		}
 	}
 	
-	
+	/**
+	 * Método que remove o funcionario do software
+	 * @param i variável que indica a posição do funcionario
+	 * @return true se:
+	 * [1]Se a remoção do funcionario for no final ou no meio
+	 * [2]Para retirar o null da posição onde o funcionario foi retirado
+	 */	
 	public boolean removerFuncionario(int i) {
 		String removeuFuncionario = d.getFuncionarios()[i].getNome();
 		
@@ -175,6 +209,13 @@ public class ControleDado {
 		}
 	}
 	
+	/**
+	 * Método que irá adicionar e editar dados do cliente
+	 * @param dadosClientes uma string que contém uma posição de onde o dado armazenado tem que ser um número 
+	 * @return false ou true se:
+	 * [1] retorna false se o dado na posição não for um número
+	 * [2] retorna true se o dado na posição for número e então adiciona ou edita dados no cliente
+	 */	
 	public boolean AdicionarEditarCliente(String[] dadosClientes) {
 		if(!dadosClientes[1].matches("[0-9]+") || !dadosClientes[4].matches("[0-9]+")) { 
 			return false;
@@ -186,6 +227,13 @@ public class ControleDado {
 		}
 	}
 	
+	/**
+	 * Método que remove o cliente do software
+	 * @param i variável que indica a posição do cliente
+	 * @return true se:
+	 * [1]Se a remoção do cliente for no final ou no meio
+	 * [2]Para retirar o null da posição onde o cliente foi retirado
+	 */		
 	public boolean removerCliente(int i) {
 		String removeuCliente = d.getClientes()[i].getNome();
 			

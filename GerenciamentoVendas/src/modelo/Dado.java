@@ -1,5 +1,10 @@
 package modelo;
 
+/**
+ * Classe que armazena dados de todas as classes do pacote modelo (exceto os dados de venda)
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class Dado {
 
 	private Capa[] capas = new Capa[20];
@@ -18,7 +23,10 @@ public class Dado {
 	private int qtdFuncionarios = 0;
 	private Cliente[] clientes = new Cliente[20];
 	private int qtdClientes = 0;
-
+	
+	/**
+	 * Método utilizado para criar dados aleatórios que serão usados para demonstrar o funcionamento do software
+	 */
 	public void preenchendoComDadosAleatorios() {
 		for (int i = 0; i < 6; i++) {
 
@@ -57,7 +65,12 @@ public class Dado {
 	public void setCapas(Capa[] capas) {
 		this.capas = capas;
 	}
-
+	
+	/**
+	 * Método que vai inserir e editar capas no sistema.
+	 * @param cp variável que contém a capa e seus dados a ser armazenado em uma posição
+	 * @param pos variável que contém a posição da capa
+	 */
 	public void inserirEditarCapa(Capa cp, int pos) {
 		this.capas[pos] = cp;
 		if (pos == qtdCapas)
@@ -79,7 +92,12 @@ public class Dado {
 	public void setCarregadores(Carregador[] carregadores) {
 		this.carregadores = carregadores;
 	}
-
+	
+	/**
+	 * Método que vai inserir e editar carregadores no sistema.
+	 * @param cg variável que contém o carregador e seus dados a ser armazenado em uma posição 
+	 * @param pos variável que contém a posição do carregador
+	 */
 	public void inserirEditarCarregador(Carregador cg, int pos) {
 		this.carregadores[pos] = cg;
 		if (pos == qtdCarregadores)
@@ -101,7 +119,12 @@ public class Dado {
 	public void setFones(Fone[] fones) {
 		this.fones = fones;
 	}
-
+	
+	/**
+	 * Método que vai inserir e editar fones no sistema.
+	 * @param f variável que contém o fone e seus dados a ser armazenado em uma posição
+	 * @param pos variável que contém a posição do fone
+	 */
 	public void inserirEditarFone(Fone f, int pos) {
 		this.fones[pos] = f;
 		if (pos == qtdFones)
@@ -123,7 +146,12 @@ public class Dado {
 	public void setPeliculas(Pelicula[] peliculas) {
 		this.peliculas = peliculas;
 	}
-
+	
+	/**
+	 * Método que vai inserir e editar peliculas no sistema.
+	 * @param p variável que contém a pelicula e seus dados a ser armazenado em uma posição
+	 * @param pos variável que contém a posição da pelicula
+	 */
 	public void inserirEditarPelicula(Pelicula p, int pos) {
 		this.peliculas[pos] = p;
 		if (pos == qtdPeliculas)
@@ -145,7 +173,12 @@ public class Dado {
 	public void setSuportes(Suporte[] suportes) {
 		this.suportes = suportes;
 	}
-
+	
+	/**
+	 * Método que vai inserir e editar suportes no sistema.
+	 * @param s variável que contém o suporte e seus dados a ser armazenado em uma posição
+	 * @param pos variável que contém a posição do suporte
+	 */
 	public void inserirEditarSuporte(Suporte s, int pos) {
 		this.suportes[pos] = s;
 		if (pos == qtdSuportes)
@@ -167,7 +200,12 @@ public class Dado {
 	public void setEstoques(Estoque[] estoques) {
 		this.estoques = estoques;
 	}
-
+	
+	/**
+	 * Método que vai inserir e editar estoques no sistema.
+	 * @param e variável que contém o estoque e seus dados a ser armazenado em uma posição
+	 * @param pos variável que contém a posição do estoque
+	 */
 	public void inserirEditarEstoque(Estoque e, int pos) {
 		this.estoques[pos] = e;
 		if (pos == qtdEstoques)
@@ -189,7 +227,12 @@ public class Dado {
 	public void setFuncionarios(Funcionario[] funcionarios) {
 		this.funcionarios = funcionarios;
 	}
-
+	
+	/**
+	 * Método que vai inserir e editar funcionários no sistema.
+	 * @param fc variável que contém o funcionario e seus dados a ser armazenado em uma posição
+	 * @param pos variável que contém a posição do funcionario
+	 */
 	public void inserirEditarFuncionario(Funcionario fc, int pos) {
 		this.funcionarios[pos] = fc;
 		if (pos == qtdFuncionarios)
@@ -211,7 +254,12 @@ public class Dado {
 	public void setClientes(Cliente[] clientes) {
 		this.clientes = clientes;
 	}
-
+	
+	/**
+	 * Método que vai inserir e editar clientes no sistema.
+	 * @param cl variável que contém o cliente e seus dados a ser armazenado em uma posição
+	 * @param pos variável que contém a posição do cliente
+	 */
 	public void inserirEditarCliente(Cliente cl, int pos) {
 		this.clientes[pos] = cl;
 		if (pos == qtdClientes)

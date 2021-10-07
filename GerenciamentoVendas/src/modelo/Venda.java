@@ -1,5 +1,10 @@
 package modelo;
 
+/**
+ * Classe que contém as informações sobre a venda
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,6 +22,16 @@ public class Venda {
 	private Date data;
 	static Double soma = (double) 0;
 	
+	/**
+	 * Construtor que contém informações que o cliente irá possuir	
+	 * @param fun é uma variável que contém a classe funcionario
+	 * @param cli é uma variável que contém a classe cliente
+	 * @param forPaga string que contém a forma de pagamento
+	 * @param quantP um int que contém a quandidade de produto vendida
+	 * @param des um double que contém o valor do desconto
+	 * @param vt um int que contém o valor total da compra 
+	 * @param d variável que contém a data da compra 
+	 */
 	public Venda(Funcionario fun, Cliente cli, String forPaga, int quantP, Double des, int vt, Date d) {
 		funcio = fun;
 		client = cli;
@@ -90,17 +105,5 @@ public class Venda {
 	public void setData(Date data) {
 		this.data = data;
 	}
-	
-	public static String somaDosPrecos(Double preco) {
-		soma = soma + preco;
-		DecimalFormat df = new DecimalFormat("#.00");
-		return df.format(soma);
-	}
-	
-	public static String valorTotalComDesconto(Double valorDescont) {
-		soma = soma - valorDescont;
-		DecimalFormat df = new DecimalFormat("#.00");
-		return df.format(soma);
-	}	
 	
 }

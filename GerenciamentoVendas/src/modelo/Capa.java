@@ -1,5 +1,10 @@
 package modelo;
 
+/**
+ * Classe que contém as informações da capa
+ * @author Maria Eduarda Barbosa e Maria Eduarda Marques
+ * @version 1.0 (outubro 2021)
+ */
 public class Capa extends Produto {
 
 	private int capaID;
